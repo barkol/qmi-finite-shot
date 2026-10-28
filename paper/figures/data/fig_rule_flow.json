@@ -1,0 +1,259 @@
+{
+ "rule": "leaf Q/W if the 95% CI of Q-W excludes zero with the same sign in both sets; no difference if it includes zero in both; Q/W in one set if it excludes zero in one set only; family-dependent if it excludes zero in both with opposite signs",
+ "units": "points (100 x accuracy difference)",
+ "sources": {
+  "base": "../results/ci.json",
+  "ahm": "../results/ci_ahm.json"
+ },
+ "source_mtime": {
+  "base": 1792684951.0060635,
+  "ahm": 1792684951.5640888
+ },
+ "placeholder": false,
+ "missing": [],
+ "nodes_kept": [
+  "event budget N",
+  "dominant noise"
+ ],
+ "nodes_dropped": {
+  "phase reference (drift)": "no paired CI of Q-W; only N=1e4; sign differs between sets",
+  "fine interference structure (cat, GKP)": "per-family data only for exact images and drift",
+  "Gaussian noise": "tested only on exact images"
+ },
+ "groups": [
+  {
+   "N": 100,
+   "rows": [
+    {
+     "N": 100,
+     "cond": "clean",
+     "key": "rule_N100_clean_dQW",
+     "base": {
+      "mean": 4.914285714285704,
+      "lo": 2.0984857521543105,
+      "hi": 7.730085676417097,
+      "sig": 1
+     },
+     "ahm": {
+      "mean": 9.476190476190471,
+      "lo": 4.793669897996857,
+      "hi": 14.158711054384089,
+      "sig": 1
+     },
+     "leaf": "Q"
+    },
+    {
+     "N": 100,
+     "cond": "loss50",
+     "key": "rule_N100_loss50_dQW",
+     "base": {
+      "mean": 6.514285714285717,
+      "lo": 3.022179086851304,
+      "hi": 10.00639234172013,
+      "sig": 1
+     },
+     "ahm": {
+      "mean": 6.0952380952380985,
+      "lo": -2.011129953281338,
+      "hi": 14.201606143757534,
+      "sig": 0
+     },
+     "leaf": "Q1"
+    },
+    {
+     "N": 100,
+     "cond": "loss80",
+     "key": "rule_N100_loss80_dQW",
+     "base": {
+      "mean": 9.828571428571431,
+      "lo": 6.08839659810152,
+      "hi": 13.568746259041342,
+      "sig": 1
+     },
+     "ahm": {
+      "mean": 2.3333333333333375,
+      "lo": -4.418150594702305,
+      "hi": 9.084817261368979,
+      "sig": 0
+     },
+     "leaf": "Q1"
+    },
+    {
+     "N": 100,
+     "cond": "deph20",
+     "key": "rule_N100_deph20_dQW",
+     "base": {
+      "mean": 14.085714285714278,
+      "lo": 9.422141760068268,
+      "hi": 18.74928681136029,
+      "sig": 1
+     },
+     "ahm": {
+      "mean": 10.999999999999988,
+      "lo": 4.41534615942977,
+      "hi": 17.584653840570205,
+      "sig": 1
+     },
+     "leaf": "Q"
+    }
+   ],
+   "collapsed": false
+  },
+  {
+   "N": 1000,
+   "rows": [
+    {
+     "N": 1000,
+     "cond": "clean",
+     "key": "rule_N1000_clean_dQW",
+     "base": {
+      "mean": 0.0,
+      "lo": -0.19583510896811707,
+      "hi": 0.19583510896811707,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 0.5714285714285672,
+      "lo": -0.7981149852954789,
+      "hi": 1.9409721281526133,
+      "sig": 0
+     },
+     "leaf": "none"
+    },
+    {
+     "N": 1000,
+     "cond": "loss50",
+     "key": "rule_N1000_loss50_dQW",
+     "base": {
+      "mean": 0.5142857142857338,
+      "lo": -1.007553118416961,
+      "hi": 2.0361245469884284,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 3.0952380952380953,
+      "lo": -0.799467770513198,
+      "hi": 6.98994396098939,
+      "sig": 0
+     },
+     "leaf": "none"
+    },
+    {
+     "N": 1000,
+     "cond": "loss80",
+     "key": "rule_N1000_loss80_dQW",
+     "base": {
+      "mean": 3.5142857142857142,
+      "lo": -0.293888443924762,
+      "hi": 7.322459872496189,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": -0.3809523809523707,
+      "lo": -6.32346371532311,
+      "hi": 5.561558953418368,
+      "sig": 0
+     },
+     "leaf": "none"
+    },
+    {
+     "N": 1000,
+     "cond": "deph20",
+     "key": "rule_N1000_deph20_dQW",
+     "base": {
+      "mean": -0.20000000000000018,
+      "lo": -1.4450762796051793,
+      "hi": 1.045076279605179,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 1.7142857142857237,
+      "lo": -1.780445159045519,
+      "hi": 5.209016587616967,
+      "sig": 0
+     },
+     "leaf": "none"
+    }
+   ],
+   "collapsed": true
+  },
+  {
+   "N": 10000,
+   "rows": [
+    {
+     "N": 10000,
+     "cond": "clean",
+     "key": "rule_N10000_clean_dQW",
+     "base": {
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 0.0,
+      "lo": -0.3964143078253003,
+      "hi": 0.3964143078253003,
+      "sig": 0
+     },
+     "leaf": "none"
+    },
+    {
+     "N": 10000,
+     "cond": "loss50",
+     "key": "rule_N10000_loss50_dQW",
+     "base": {
+      "mean": 0.05714285714286671,
+      "lo": -0.20228900250136975,
+      "hi": 0.3165747167871032,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 0.23809523809525945,
+      "lo": -1.0291444595912855,
+      "hi": 1.5053349357818044,
+      "sig": 0
+     },
+     "leaf": "none"
+    },
+    {
+     "N": 10000,
+     "cond": "loss80",
+     "key": "rule_N10000_loss80_dQW",
+     "base": {
+      "mean": -0.34285714285714475,
+      "lo": -3.8943292649686128,
+      "hi": 3.2086149792543233,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 1.4761904761904865,
+      "lo": -6.2292904205049435,
+      "hi": 9.181671372885916,
+      "sig": 0
+     },
+     "leaf": "none"
+    },
+    {
+     "N": 10000,
+     "cond": "deph20",
+     "key": "rule_N10000_deph20_dQW",
+     "base": {
+      "mean": -0.05714285714285561,
+      "lo": -0.23428548898919788,
+      "hi": 0.11999977470348665,
+      "sig": 0
+     },
+     "ahm": {
+      "mean": 0.0,
+      "lo": -0.617760443469247,
+      "hi": 0.617760443469247,
+      "sig": 0
+     },
+     "leaf": "none"
+    }
+   ],
+   "collapsed": true
+  }
+ ]
+}

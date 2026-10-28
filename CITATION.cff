@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "qmi-finite-shot: code and results for homodyne versus heterodyne detection for classifying families of optical quantum states from finite records of detection events"
+type: software
+authors:
+  - family-names: Grzywa
+    given-names: Franciszek
+  - family-names: Dolata
+    given-names: Sebastian
+  - family-names: Bartkiewicz
+    given-names: Karol
+    affiliation: "Institute of Spintronics and Quantum Information, Faculty of Physics and Astronomy, Adam Mickiewicz University, Poznan, Poland"
+license: MIT
+repository-code: "https://github.com/barkol/qmi-finite-shot"

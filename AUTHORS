@@ -1,0 +1,17 @@
+Authors of the code, the result files and the manuscript (the same authors as in the paper)
+
+Franciszek Grzywa
+Sebastian Dolata
+Karol Bartkiewicz (corresponding author), Institute of Spintronics and Quantum Information,
+Faculty of Physics and Astronomy, Adam Mickiewicz University, 61-614 Poznan, Poland
+
+Contributions (as in the paper)
+F.G., S.D.: software, investigation, data curation, visualization, writing (review and editing).
+K.B.: conceptualization, methodology, formal analysis, supervision, funding acquisition,
+writing (original draft, review and editing).
+
+The git history of this repository records all commits under one account (K.B.) because the
+code was assembled and committed from one working copy.
+
+AI assistance: Claude Code (Anthropic) was used to write and run code and to draft text, as stated in the paper (Methods) and in
+README.md (Use of AI tools). The authors reviewed the code and checked every number and statement.

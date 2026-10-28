@@ -1,0 +1,190 @@
+[
+ {
+  "cell": "loss_0_N100.npz",
+  "model": "clf_Q_shots_s0",
+  "states": [
+   603
+  ],
+  "margins": [
+   0.016542434692382812
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_0_N100.npz",
+  "model": "clf_W_shots_s3",
+  "states": [
+   648
+  ],
+  "margins": [
+   9.942054748535156e-05
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_0_N100.npz",
+  "model": "clf_W_sino_s1",
+  "states": [
+   53
+  ],
+  "margins": [
+   0.0028252601623535156
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_50_N100.npz",
+  "model": "clf_Q_shots_s0",
+  "states": [
+   639,
+   668
+  ],
+  "margins": [
+   0.012012958526611328,
+   0.0019767284393310547
+  ],
+  "gpu_correct": [
+   false,
+   false
+  ]
+ },
+ {
+  "cell": "loss_50_N100.npz",
+  "model": "clf_W_shots_s3",
+  "states": [
+   453
+  ],
+  "margins": [
+   0.0006150603294372559
+  ],
+  "gpu_correct": [
+   true
+  ]
+ },
+ {
+  "cell": "loss_50_N100.npz",
+  "model": "clf_W_sino_s1",
+  "states": [
+   7
+  ],
+  "margins": [
+   0.0028645992279052734
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_50_N1000.npz",
+  "model": "clf_Q_shots_s1",
+  "states": [
+   660
+  ],
+  "margins": [
+   0.009778022766113281
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_80_N100.npz",
+  "model": "clf_Q_shots_s3",
+  "states": [
+   687
+  ],
+  "margins": [
+   0.0019230842590332031
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_80_N100.npz",
+  "model": "clf_W_sino_s2",
+  "states": [
+   608
+  ],
+  "margins": [
+   0.0010751336812973022
+  ],
+  "gpu_correct": [
+   true
+  ]
+ },
+ {
+  "cell": "loss_80_N100.npz",
+  "model": "clf_W_sino_s3",
+  "states": [
+   416
+  ],
+  "margins": [
+   0.0004336237907409668
+  ],
+  "gpu_correct": [
+   true
+  ]
+ },
+ {
+  "cell": "loss_80_N1000.npz",
+  "model": "clf_Q_shots_s0",
+  "states": [
+   125
+  ],
+  "margins": [
+   0.008014678955078125
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_80_N1000.npz",
+  "model": "clf_W_shots_s0",
+  "states": [
+   334
+  ],
+  "margins": [
+   0.001796722412109375
+  ],
+  "gpu_correct": [
+   false
+  ]
+ },
+ {
+  "cell": "loss_80_N10000.npz",
+  "model": "clf_Q_shots_s0",
+  "states": [
+   140,
+   676
+  ],
+  "margins": [
+   0.014750003814697266,
+   0.0067365169525146484
+  ],
+  "gpu_correct": [
+   false,
+   false
+  ]
+ },
+ {
+  "cell": "dephase_20_N100.npz",
+  "model": "clf_W_sino_s2",
+  "states": [
+   508
+  ],
+  "margins": [
+   0.016124367713928223
+  ],
+  "gpu_correct": [
+   true
+  ]
+ }
+]

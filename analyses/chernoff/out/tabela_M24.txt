@@ -1,0 +1,20 @@
+== ahm
+komorka         xiQ      xiW    xiQCB   W>Q   W/Q  Q-W[pkt] N=1e2   1e3   1e4   przejscie N
+clean0       0.0855   0.1183   0.7862  0.58  1.12      -0.0   +0.0   +0.0   -
+           najtrudniejsze pary (Q): {'gkp / thermal': 40, 'num / thermal': 28, 'cat / fock': 25}
+dephase20    0.0226   0.0320   0.2944  0.58  1.11      -2.3   -0.0   -0.0   -
+           najtrudniejsze pary (Q): {'gkp / thermal': 44, 'binomial / cat': 30, 'num / thermal': 22}
+loss50       0.0155   0.0135   0.1141  0.33  0.87      +1.1   +0.0   +0.0   -
+           najtrudniejsze pary (Q): {'gkp / thermal': 47, 'binomial / cat': 25, 'cat / fock': 22}
+loss80       0.0033   0.0028   0.0134  0.43  0.93      +1.0   -1.8   -0.1   316
+           najtrudniejsze pary (Q): {'gkp / thermal': 46, 'binomial / cat': 27, 'num / thermal': 19}
+== eqn
+komorka         xiQ      xiW    xiQCB   W>Q   W/Q  Q-W[pkt] N=1e2   1e3   1e4   przejscie N
+clean0       0.0840   0.1131   0.6567  0.60  1.21      -0.1   -0.0   -0.0   -
+           najtrudniejsze pary (Q): {'cat / sqvac': 42, 'binomial / fock': 36, 'binomial / thermal': 36}
+dephase20    0.0211   0.0274   0.2752  0.54  1.03      -1.4   -0.0   -0.0   -
+           najtrudniejsze pary (Q): {'gkp / thermal': 31, 'binomial / cat': 31, 'gkp / sqvac': 24}
+loss50       0.0164   0.0140   0.1212  0.57  1.01      -2.0   -0.5   -0.0   -
+           najtrudniejsze pary (Q): {'cat / sqvac': 45, 'binomial / fock': 37, 'binomial / thermal': 35}
+loss80       0.0027   0.0025   0.0165  0.67  1.25      -1.1   -4.3   -2.1   -
+           najtrudniejsze pary (Q): {'cat / sqvac': 47, 'binomial / fock': 37, 'binomial / thermal': 35}

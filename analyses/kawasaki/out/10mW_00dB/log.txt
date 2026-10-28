@@ -1,0 +1,13 @@
+19:17:51 10mW_00dB: c=+0.0370+-0.0176 x0=+0.0456 p0=-0.0527 chi2 15.6/3; var [0.852 1.525 1.811 1.958 1.537 0.895] <n>(v0=1/2)=0.933
+19:18:24    ml sgn=1: logL(Pi)=-94753.9 (zmiana w ostatnich 500 it.: [0.]) TVD(Pi) [0.023 0.036 0.035 0.031 0.031 0.028]; logL(marg potoku)=-94753.7 TVD [0.023 0.036 0.036 0.031 0.03  0.029]
+19:18:43    ml sgn=-1: logL(Pi)=-94753.9 (zmiana w ostatnich 500 it.: [0.]) TVD(Pi) [0.023 0.036 0.035 0.031 0.031 0.028]; logL(marg potoku)=-96218.5 TVD [0.023 0.19  0.083 0.053 0.086 0.168]
+19:21:59    skala s=0.707: logL_ML+N log s=-96550.8 logL_PSS+N log s=-96711.2 purity=0.603 nbar=0.38 W0=0.143 PSS(r,psi,eta)=[ 0.323 -0.236  0.254]
+19:22:10    skala s=0.8: logL_ML+N log s=-95633.2 logL_PSS+N log s=-95725.4 purity=0.503 nbar=0.57 W0=0.023 PSS(r,psi,eta)=[0.24  2.908 0.467]
+19:22:22    skala s=0.9: logL_ML+N log s=-94897.7 logL_PSS+N log s=-94960.6 purity=0.521 nbar=0.74 W0=-0.064 PSS(r,psi,eta)=[0.25  2.906 0.61 ]
+19:22:32    skala s=0.95: logL_ML+N log s=-94777.8 logL_PSS+N log s=-94846.3 purity=0.542 nbar=0.82 W0=-0.091 PSS(r,psi,eta)=[0.268 2.905 0.66 ]
+19:22:43    skala s=1.0: logL_ML+N log s=-94753.9 logL_PSS+N log s=-94903.8 purity=0.502 nbar=0.95 W0=-0.083 PSS(r,psi,eta)=[ 0.291 -0.236  0.698]
+19:22:54    skala s=1.05: logL_ML+N log s=-94734.9 logL_PSS+N log s=-95167.3 purity=0.456 nbar=1.09 W0=-0.072 PSS(r,psi,eta)=[ 0.319 -0.237  0.723]
+19:23:05    skala s=1.1: logL_ML+N log s=-94728.7 logL_PSS+N log s=-95643.9 purity=0.416 nbar=1.25 W0=-0.066 PSS(r,psi,eta)=[ 0.355 -0.238  0.738]
+19:23:19    skala s=1.25: logL_ML+N log s=-94691.4 logL_PSS+N log s=-97024.5 purity=0.327 nbar=1.75 W0=-0.055 PSS(r,psi,eta)=[ 1.5   -0.248  0.132]
+19:23:31    skala s=1.414: logL_ML+N log s=-94677.2 logL_PSS+N log s=-98029.2 purity=0.258 nbar=2.38 W0=-0.045 PSS(r,psi,eta)=[1.5   2.892 0.181]
+19:25:49 10mW_00dB: c=+0.0370+-0.0176 x0=+0.0456 p0=-0.0527 chi2 15.6/3; var [0.852 1.525 1.811 1.958 1.537 0.895] <n>(v0=1/2)=0.933

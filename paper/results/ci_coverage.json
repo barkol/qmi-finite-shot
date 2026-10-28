@@ -1,0 +1,353 @@
+{
+ "model": "Coverage of the paper's interval for the paired difference Q-W, on synthetic data.\nThis self-contained simulation estimates the coverage of the interval used in the paper (z for the test-state term, t for the run term).\n\nModel (logit scale).  A test set of 700 states (7 families x 100) is shared by all networks.  Network of type T\n(Q or W), run j, state i of family c succeeds with probability sigmoid(a_Tc + u_i + e_Ti + b_Tj) and the outcome is\na Bernoulli draw: u_i = difficulty common to Q and W (sd s_u), e_Ti = state-specific part (sd s_e), b_Tj = run effect\n(sd s_b), a_Tc = family intercept.  The true difference is the population mean over states and runs (Gauss-Hermite).\nInterval constructions, applied exactly as in make_numbers.paired_diff to the 5 (or 3) runs per type:\n  paper : hypot(1.96 * se_states, t_{0.975,df} * se_runs), se_states from the per-state difference of run-averaged\n          outcomes, stratified by family; se_runs and Welch df from the run accuracies;\n  single_t : t_{0.975,df} * hypot(se_states, se_runs) (one t quantile for the sum, Welch df of the run term).\n",
+ "summary_min_mean_max": {
+  "k5": {
+   "paper": [
+    0.9583,
+    0.9695749999999999,
+    0.9865
+   ],
+   "single_t": [
+    0.96005,
+    0.9747791666666669,
+    0.9935
+   ],
+   "all_z": [
+    0.92035,
+    0.9434416666666666,
+    0.9778
+   ]
+  },
+  "k3": {
+   "paper": [
+    0.9652,
+    0.9772875000000001,
+    0.99115
+   ],
+   "single_t": [
+    0.97,
+    0.9853208333333333,
+    0.99895
+   ],
+   "all_z": [
+    0.88505,
+    0.9237708333333332,
+    0.973
+   ]
+  }
+ },
+ "scenarios": [
+  {
+   "cell": "clean",
+   "seed_sd_logit": 0.1,
+   "runs": 5,
+   "true_diff_pct": 6.242545638364261,
+   "n_rep": 20000,
+   "cov_paper": 0.9865,
+   "cov_single_t": 0.9935,
+   "cov_all_z": 0.9778,
+   "halfwidth_pct_paper": 2.5136208263322946,
+   "halfwidth_pct_single_t": 2.7480812623195905,
+   "halfwidth_pct_all_z": 2.2327547730288577
+  },
+  {
+   "cell": "clean",
+   "seed_sd_logit": 0.1,
+   "runs": 3,
+   "true_diff_pct": 6.242545638364261,
+   "n_rep": 20000,
+   "cov_paper": 0.99115,
+   "cov_single_t": 0.99895,
+   "cov_all_z": 0.973,
+   "halfwidth_pct_paper": 3.8792935625024563,
+   "halfwidth_pct_single_t": 4.638178458989181,
+   "halfwidth_pct_all_z": 2.7826876697974217
+  },
+  {
+   "cell": "clean",
+   "seed_sd_logit": 0.3,
+   "runs": 5,
+   "true_diff_pct": 6.279707871973805,
+   "n_rep": 20000,
+   "cov_paper": 0.9689,
+   "cov_single_t": 0.97525,
+   "cov_all_z": 0.94405,
+   "halfwidth_pct_paper": 4.276544186670184,
+   "halfwidth_pct_single_t": 4.428628434629924,
+   "halfwidth_pct_all_z": 3.566027270982227
+  },
+  {
+   "cell": "clean",
+   "seed_sd_logit": 0.3,
+   "runs": 3,
+   "true_diff_pct": 6.279707871973805,
+   "n_rep": 20000,
+   "cov_paper": 0.97675,
+   "cov_single_t": 0.98855,
+   "cov_all_z": 0.92245,
+   "halfwidth_pct_paper": 7.063748687145114,
+   "halfwidth_pct_single_t": 7.5506801774917465,
+   "halfwidth_pct_all_z": 4.457773148731583
+  },
+  {
+   "cell": "clean",
+   "seed_sd_logit": 0.5,
+   "runs": 5,
+   "true_diff_pct": 6.348322466935297,
+   "n_rep": 20000,
+   "cov_paper": 0.9624,
+   "cov_single_t": 0.9661,
+   "cov_all_z": 0.92615,
+   "halfwidth_pct_paper": 6.5458918491648745,
+   "halfwidth_pct_single_t": 6.649991718998029,
+   "halfwidth_pct_all_z": 5.3362603571756395
+  },
+  {
+   "cell": "clean",
+   "seed_sd_logit": 0.5,
+   "runs": 3,
+   "true_diff_pct": 6.348322466935297,
+   "n_rep": 20000,
+   "cov_paper": 0.9701,
+   "cov_single_t": 0.97885,
+   "cov_all_z": 0.8968,
+   "halfwidth_pct_paper": 10.992820811169072,
+   "halfwidth_pct_single_t": 11.329479445469422,
+   "halfwidth_pct_all_z": 6.6446810771534235
+  },
+  {
+   "cell": "loss50",
+   "seed_sd_logit": 0.1,
+   "runs": 5,
+   "true_diff_pct": 5.798464914809786,
+   "n_rep": 20000,
+   "cov_paper": 0.98355,
+   "cov_single_t": 0.991,
+   "cov_all_z": 0.971,
+   "halfwidth_pct_paper": 3.7177691132682513,
+   "halfwidth_pct_single_t": 4.015938364183712,
+   "halfwidth_pct_all_z": 3.286648166410409
+  },
+  {
+   "cell": "loss50",
+   "seed_sd_logit": 0.1,
+   "runs": 3,
+   "true_diff_pct": 5.798464914809786,
+   "n_rep": 20000,
+   "cov_paper": 0.98925,
+   "cov_single_t": 0.99745,
+   "cov_all_z": 0.96605,
+   "halfwidth_pct_paper": 5.747177606772088,
+   "halfwidth_pct_single_t": 6.708277273045006,
+   "halfwidth_pct_all_z": 4.078900828590454
+  },
+  {
+   "cell": "loss50",
+   "seed_sd_logit": 0.3,
+   "runs": 5,
+   "true_diff_pct": 5.772217297168824,
+   "n_rep": 20000,
+   "cov_paper": 0.9653,
+   "cov_single_t": 0.9699,
+   "cov_all_z": 0.93355,
+   "halfwidth_pct_paper": 7.05385996154691,
+   "halfwidth_pct_single_t": 7.219469612745101,
+   "halfwidth_pct_all_z": 5.904536137978571
+  },
+  {
+   "cell": "loss50",
+   "seed_sd_logit": 0.3,
+   "runs": 3,
+   "true_diff_pct": 5.772217297168824,
+   "n_rep": 20000,
+   "cov_paper": 0.97385,
+   "cov_single_t": 0.9834,
+   "cov_all_z": 0.9114,
+   "halfwidth_pct_paper": 11.688415353387224,
+   "halfwidth_pct_single_t": 12.218049903507854,
+   "halfwidth_pct_all_z": 7.4206426402106285
+  },
+  {
+   "cell": "loss50",
+   "seed_sd_logit": 0.5,
+   "runs": 5,
+   "true_diff_pct": 5.720125780020558,
+   "n_rep": 20000,
+   "cov_paper": 0.95865,
+   "cov_single_t": 0.96115,
+   "cov_all_z": 0.922,
+   "halfwidth_pct_paper": 10.97077305770707,
+   "halfwidth_pct_single_t": 11.077973303868962,
+   "halfwidth_pct_all_z": 9.056079339488223
+  },
+  {
+   "cell": "loss50",
+   "seed_sd_logit": 0.5,
+   "runs": 3,
+   "true_diff_pct": 5.720125780020558,
+   "n_rep": 20000,
+   "cov_paper": 0.96935,
+   "cov_single_t": 0.9745,
+   "cov_all_z": 0.89585,
+   "halfwidth_pct_paper": 18.43754712023895,
+   "halfwidth_pct_single_t": 18.787026408661347,
+   "halfwidth_pct_all_z": 11.37244948196958
+  },
+  {
+   "cell": "loss80",
+   "seed_sd_logit": 0.1,
+   "runs": 5,
+   "true_diff_pct": 8.950435106521182,
+   "n_rep": 20000,
+   "cov_paper": 0.981,
+   "cov_single_t": 0.98905,
+   "cov_all_z": 0.96705,
+   "halfwidth_pct_paper": 4.2874137366286265,
+   "halfwidth_pct_single_t": 4.6144191460246144,
+   "halfwidth_pct_all_z": 3.7805304731243043
+  },
+  {
+   "cell": "loss80",
+   "seed_sd_logit": 0.1,
+   "runs": 3,
+   "true_diff_pct": 8.950435106521182,
+   "n_rep": 20000,
+   "cov_paper": 0.98755,
+   "cov_single_t": 0.99675,
+   "cov_all_z": 0.9612,
+   "halfwidth_pct_paper": 6.690217514863441,
+   "halfwidth_pct_single_t": 7.73813923030315,
+   "halfwidth_pct_all_z": 4.703273307006537
+  },
+  {
+   "cell": "loss80",
+   "seed_sd_logit": 0.3,
+   "runs": 5,
+   "true_diff_pct": 8.874494333650452,
+   "n_rep": 20000,
+   "cov_paper": 0.9635,
+   "cov_single_t": 0.96855,
+   "cov_all_z": 0.9326,
+   "halfwidth_pct_paper": 8.49913118337328,
+   "halfwidth_pct_single_t": 8.670979700003858,
+   "halfwidth_pct_all_z": 7.109605476518725
+  },
+  {
+   "cell": "loss80",
+   "seed_sd_logit": 0.3,
+   "runs": 3,
+   "true_diff_pct": 8.874494333650452,
+   "n_rep": 20000,
+   "cov_paper": 0.9729,
+   "cov_single_t": 0.98125,
+   "cov_all_z": 0.9095,
+   "halfwidth_pct_paper": 14.071017031723335,
+   "halfwidth_pct_single_t": 14.623272861869772,
+   "halfwidth_pct_all_z": 8.907049883334182
+  },
+  {
+   "cell": "loss80",
+   "seed_sd_logit": 0.5,
+   "runs": 5,
+   "true_diff_pct": 8.72859739655829,
+   "n_rep": 20000,
+   "cov_paper": 0.9583,
+   "cov_single_t": 0.96005,
+   "cov_all_z": 0.92035,
+   "halfwidth_pct_paper": 13.191251969553964,
+   "halfwidth_pct_single_t": 13.30135047035142,
+   "halfwidth_pct_all_z": 10.90955914134395
+  },
+  {
+   "cell": "loss80",
+   "seed_sd_logit": 0.5,
+   "runs": 3,
+   "true_diff_pct": 8.72859739655829,
+   "n_rep": 20000,
+   "cov_paper": 0.9652,
+   "cov_single_t": 0.97,
+   "cov_all_z": 0.88505,
+   "halfwidth_pct_paper": 22.00689843815942,
+   "halfwidth_pct_single_t": 22.362305090063053,
+   "halfwidth_pct_all_z": 13.649074957308423
+  },
+  {
+   "cell": "deph20",
+   "seed_sd_logit": 0.1,
+   "runs": 5,
+   "true_diff_pct": 11.9147442615837,
+   "n_rep": 20000,
+   "cov_paper": 0.9816,
+   "cov_single_t": 0.9902,
+   "cov_all_z": 0.96915,
+   "halfwidth_pct_paper": 3.7899559400924967,
+   "halfwidth_pct_single_t": 4.097116449457022,
+   "halfwidth_pct_all_z": 3.3470645064863582
+  },
+  {
+   "cell": "deph20",
+   "seed_sd_logit": 0.1,
+   "runs": 3,
+   "true_diff_pct": 11.9147442615837,
+   "n_rep": 20000,
+   "cov_paper": 0.98905,
+   "cov_single_t": 0.9977,
+   "cov_all_z": 0.96615,
+   "halfwidth_pct_paper": 5.865801535728379,
+   "halfwidth_pct_single_t": 6.849915562295749,
+   "halfwidth_pct_all_z": 4.148236297509318
+  },
+  {
+   "cell": "deph20",
+   "seed_sd_logit": 0.3,
+   "runs": 5,
+   "true_diff_pct": 11.854472747535116,
+   "n_rep": 20000,
+   "cov_paper": 0.9652,
+   "cov_single_t": 0.97005,
+   "cov_all_z": 0.935,
+   "halfwidth_pct_paper": 7.240046616495522,
+   "halfwidth_pct_single_t": 7.41065558136411,
+   "halfwidth_pct_all_z": 6.039891646458796
+  },
+  {
+   "cell": "deph20",
+   "seed_sd_logit": 0.3,
+   "runs": 3,
+   "true_diff_pct": 11.854472747535116,
+   "n_rep": 20000,
+   "cov_paper": 0.97455,
+   "cov_single_t": 0.98395,
+   "cov_all_z": 0.9088,
+   "halfwidth_pct_paper": 11.992249716300106,
+   "halfwidth_pct_single_t": 12.537236585604902,
+   "halfwidth_pct_all_z": 7.56176485108667
+  },
+  {
+   "cell": "deph20",
+   "seed_sd_logit": 0.5,
+   "runs": 5,
+   "true_diff_pct": 11.735683074089609,
+   "n_rep": 20000,
+   "cov_paper": 0.96,
+   "cov_single_t": 0.96255,
+   "cov_all_z": 0.9226,
+   "halfwidth_pct_paper": 11.300981597315879,
+   "halfwidth_pct_single_t": 11.410253983349808,
+   "halfwidth_pct_all_z": 9.303550379563209
+  },
+  {
+   "cell": "deph20",
+   "seed_sd_logit": 0.5,
+   "runs": 3,
+   "true_diff_pct": 11.735683074089609,
+   "n_rep": 20000,
+   "cov_paper": 0.96775,
+   "cov_single_t": 0.9725,
+   "cov_all_z": 0.889,
+   "halfwidth_pct_paper": 18.9251917142453,
+   "halfwidth_pct_single_t": 19.27792604156827,
+   "halfwidth_pct_all_z": 11.634852420265213
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+/data/
+runs/
+logs/
+*.pt
+*.npz
+*.h5
+__pycache__/
+*.pyc
+paper/sn-template/
+paper/sn/
+# LaTeX build by-products
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*Notes.bib
+# large inputs of the pipeline, kept outside git (see MANIFEST_LARGE_FILES.md)
+/data_eq/
+/data_eq_ahm/
+/runs_eq/
+/runs_ahm_eq/
+/dane_eksp/
+# result files and figure caches are part of the release
+!paper/results/**/*.npz
+!paper/results_ahm/**/*.npz
+!paper/figures/data/*.npz
+paper/*.bbl
+paper/build/
+# preview images written next to the figure PDFs
+paper/figures/*.png
