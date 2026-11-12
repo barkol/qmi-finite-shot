@@ -35,3 +35,7 @@ paper/figures/fig_dephasing_sectors/gle/
 paper/figures/fig_dephasing_sectors/*.gle
 paper/figures/fig_dephasing_sectors/*.pdf
 paper/figures/fig_dephasing_sectors/*.eps
+paper/figures/fig_fisher_overview/gle/
+paper/figures/fig_fisher_overview/*.gle
+paper/figures/fig_fisher_overview/*.pdf
+paper/figures/fig_fisher_overview/*.eps
