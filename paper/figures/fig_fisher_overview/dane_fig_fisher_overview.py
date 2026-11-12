@@ -1,6 +1,6 @@
 """Data layer for fig_fisher_overview (Fig. 1): efficiencies F/F_SLD of homodyne (random phase) and heterodyne
 detection near a thermal state, and the mode criterion of Eq. (criterion).
-(a) bounds of Theorems 1 and 2 versus nbar (closed form), medians over random directions (analyses/fisher/out/c4.json,
+(a) bounds of Theorems 1 and 2 and the sharp homodyne supremum of sector l = 3 (Theorem 3) versus nbar (closed form), medians over random directions (analyses/fisher/out/c4.json,
     Fock support d = 4, 6, 8) and the edge directions (a^dag)^l rho0 + h.c., l = 1, 3 (c9.json, largest support).
 (b) occupation nbar* above which heterodyne detection carries more information on the mode (n, |l|):
     binom(n, (n-|l|)/2) = ((2 nbar + 1)/(nbar + 1))^n  ->  nbar* = (c - 1)/(2 - c),  c = binom^(1/n).
@@ -20,6 +20,9 @@ def build():
     nb = np.linspace(0, 5, 501); q = nb / (nb + 1)
     d = dict(nb=nb, hom_l1=0.5 + 0 * nb, hom_l0=2 * nb * (nb + 1) / (2 * nb + 1) ** 2,
              het_all=(2 * nb + 1) / (2 * nb + 2), het_l3=(1 + q ** 3) / 2, het_l0=q)
+    # Theorem 3: sharp homodyne supremum in sector l, (a^l+b^l)/2 max_k binom(l+2k,k)(ab)^k
+    A, B = (nb + 1) / (2 * nb + 1), nb / (2 * nb + 1)
+    d["hom_sup_l3"] = 0.5 * (A ** 3 + B ** 3) * np.max([comb(3 + 2 * k, k) * (A * B) ** k for k in range(60)], axis=0)
     c4 = json.load(open(FOUT / "c4.json")); nbs = (0.5, 1.0, 2.0, 5.0)
     for X in ("Q", "W"):
         med = np.array([[c4[f"thermal_nb{x}_d{s}"][f"eta{X}_median"] for s in (4, 6, 8)] for x in nbs])

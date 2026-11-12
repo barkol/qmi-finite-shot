@@ -15,6 +15,9 @@ long scripts are resumable (finished cases are skipped).
 | `c7_szum.py` | loss, dephasing and Gaussian noise act diagonally on the Hermite-Gauss modes (the heterodyne integral skips grid points where the reference `Q` underflows) | `out/c7.json` |
 | `c8_globalne.py` | effect of dephasing on the Chernoff exponents (Sec. IV, global part) | `out/c8.json` |
 | `c9_ostrosc.py` | sharpness: displacements attain both bounds, and `(a^dag)^l rho0 + h.c.` the heterodyne sector bound | `out/c9.json` |
+| `c10_sektory.py`, `c10_diag.py`, `c10_meixner.py` | Theorem 1 (spectrum of the modes): sector suprema by a generalized eigenproblem, commutation of the forms, simultaneous diagonalization by the Meixner directions | `out/c10.json`, `out/c10_meixner.json` |
+| `c11_dowod_widmo.py`, `c11b.py` | each identity of the proof of Theorem 1 (Meixner-Laguerre conditional expectation, single Laguerre-Gauss mode, pure Hermite order, bound 1/2) | `out/c11.json` |
+| `c12_sld_mody.py` | F_SLD diagonal in the Hermite-Gauss modes, Eq. (sldmodes), against the Fock-basis formula | `out/c12.json` |
 | `fisherlib.py`, `c4lib.py` | shared code (no side effects on import) | |
 
 Dependencies: numpy, scipy, mpmath. `c8_globalne.py` also needs qsdl and the pair matrices
