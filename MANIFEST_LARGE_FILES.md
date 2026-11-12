@@ -26,7 +26,6 @@ denotes the directory of the respective analysis in this repository. Sizes are a
 | `analyses/maxlik/cls_*/` | 1 MB each | correctness matrices (input of `analyze.py`) |
 | `analyses/maxlik/wbasis_D30.npy` etc. | 0.11 GB | Wigner basis cache |
 | `analyses/arch2/det/`, `analyses/arch2/pary/` | 13 MB, 0.2 MB | test caches and paired correctness matrices |
-| `analyses/chernoff/out/M24_*.npz` | 2.3 MB | per-state Chernoff exponents (input of `podsumuj.py`) |
 | `analyses/kawasaki/cache_ahmK6/` | 2.2 GB | K=6 records of the Ahmed set (training cache) |
 | `analyses/kawasaki/out/*/`, `out_konno/*.npz` | small | per-file npz of the Kawasaki and Konno record tests |
 | `analyses/kawasaki_epr/dane/` | 0.51 GB | quadratures extracted from the EPR traces (`krok12_kwadratury.py`) |

@@ -1,5 +1,7 @@
 # Wykladniki Chernoffa: heterodyna Q, homodyna W (K=36), granica kwantowa
 
+Pliki out/M24_*.npz powstaly przez `python analyses/chernoff/chernoff.py --M 24` (ziarno 2210) i sa w repozytorium.
+
 Skrypty: chernoff.py (samotest analityczny: dwa stany koherentne C_Q = C_W = |da|^2/4, QCB = |da|^2, zgodne do 1e-9),
 podsumuj.py. Dane: out/M24_*.npz (24 stany na klase, samplery i kanaly jak test sweep, siatka 128 x 128, okno +-12),
 tabela out/tabela_M24.txt, out/podsumowanie_M24.json. Kontrola: QCB >= C_Q i QCB >= C_W we wszystkich parach.

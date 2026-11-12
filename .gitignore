@@ -24,7 +24,14 @@ paper/*Notes.bib
 !paper/results/**/*.npz
 !paper/results_ahm/**/*.npz
 !paper/figures/data/*.npz
+!analyses/chernoff/out/M24_*.npz
 paper/*.bbl
 paper/build/
 # preview images written next to the figure PDFs
 paper/figures/*.png
+# GLE build by-products of the figure scripts
+.gle/
+paper/figures/fig_dephasing_sectors/gle/
+paper/figures/fig_dephasing_sectors/*.gle
+paper/figures/fig_dephasing_sectors/*.pdf
+paper/figures/fig_dephasing_sectors/*.eps

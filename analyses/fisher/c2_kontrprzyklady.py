@@ -109,6 +109,27 @@ if not done("c_local"):
         out[str(nb)] = dict(het=rowsQ, hom=rowsW)
     res["c_local"] = out; save(); print("c", out, flush=True)
 
+# (c') range of the leading order near the vacuum: the same direction as in (c) at small eps.
+# Precise exponent: normalized discrete distributions and log1p/expm1, so that xi ~ eps^2 is not lost to round-off.
+def chernoff_precise(p, q):
+    p = p / p.sum(); q = q / q.sum(); lr = np.log1p(q / p - 1)
+    f = lambda s: np.log1p(np.sum(p * np.expm1((1 - s) * lr)))
+    r = minimize_scalar(f, bounds=(1e-4, 1 - 1e-4), method="bounded", options=dict(xatol=1e-8))
+    return -r.fun, r.x
+
+if not done("c_local_vac"):
+    rng = np.random.default_rng(7); d = 5; g = Grid(0.5, d, nth=72)          # same draw as nb=0 in (c)
+    tau = random_traceless(d, rng); tau = tau @ tau; tau /= np.trace(tau)
+    rho0 = np.zeros((d, d)); rho0[0, 0] = 1; D = tau - rho0
+    FQ, FW = g.F_het(D), g.F_hom_random(D); rowsQ, rowsW = [], []
+    for eps in (0.0125, 1e-3, 1e-4, 1e-5, 1e-6):
+        q0 = g.Q0.ravel(); q1 = q0 + eps * g.qfun(D).ravel()
+        xi, s = chernoff_precise(q0, q1); rowsQ.append((eps, xi / (eps ** 2 * FQ / 8), s))
+        P0 = np.concatenate([g.p0_theta(t) for t in g.th]); P1 = P0 + eps * np.concatenate([g.marginal(D, t) for t in g.th])
+        xiW, sW = chernoff_precise(P0, P1); rowsW.append((eps, xiW / (eps ** 2 * FW / 8), sW))
+        print("c'", eps, rowsQ[-1], rowsW[-1], flush=True)
+    res["c_local_vac"] = dict(het=rowsQ, hom=rowsW); save()
+
 # (d) squeezed states, closed-form Gaussian Chernoff
 def logC(a, b, s):  # ln int N(0,a)^s N(0,b)^(1-s)
     return 0.5 * ((1 - s) * np.log(a) + s * np.log(b)) - 0.5 * np.log(s * b + (1 - s) * a)

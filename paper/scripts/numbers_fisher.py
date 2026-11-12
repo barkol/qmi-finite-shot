@@ -2,17 +2,29 @@
 import json, os, numpy as np
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "analyses", "fisher", "out")
 J = lambda f: json.load(open(f"{D}/{f}"))
-c2, c4, c8, c9 = J("c2.json"), J("c4.json"), J("c8.json"), J("c9.json")
+c2, c4, c7, c8, c9 = J("c2.json"), J("c4.json"), J("c7.json"), J("c8.json"), J("c9.json")
 c2b = J("c2b_lower.json")
 R = {}
-# C2: local radius at the vacuum (Bhattacharyya ratio from WYNIK_C1C2, eps=1e-3 -> 0.70); nbar=1 eps=0.05 -> 1.018
-R["loc_vac_eps"] = "10^{-5}"
+# C2: local radius at the vacuum = largest eps at which both detections are within 2% of the leading term (c_local_vac)
+cv = c2["c_local_vac"]
+ok = [rq[0] for rq, rw in zip(cv["het"], cv["hom"]) if abs(rq[1] - 1) < 0.02 and abs(rw[1] - 1) < 0.02]
+R["loc_vac_eps"] = f"10^{{{int(round(np.log10(max(ok))))}}}"
 R["loc_nb1_ratio"] = f"{c2['c_local']['1.0']['het'][1][1]:.2f}"
 # C2b: heterodyne local advantage unbounded: min F_W/F_Q at nbar=1, d=4..10
 R["minWQ_nb1_d10"] = f"{c2b['nb1.0_d10']:.2f}"
 # C4: typical efficiencies (medians over random directions), range over nbar in {0.5,1,2,5} and d in {4,6,8}
 med = [v[k] for key, v in c4.items() if key.startswith("thermal_") for k in ("etaQ_median", "etaW_median")]
 R["eta_typ"] = f"{min(med):.2f}\\mbox{{--}}{max(med):.2f}"
+# C9: sharpness of the heterodyne sector bound for the edge direction (a^dag)^3 rho0 + h.c. at nbar=1 (largest support d=30)
+r = c9["nb1.0_l3"]["rows"][-1]
+R["sharp_het_nb1_l3"], R["sharp_hom_nb1_l3"] = f"{r[1]:.2f}", f"{r[2]:.2f}"
+# C7: noise channels in the mode picture, largest relative deviation of direct integrals from Eq. (noisemodes)
+def relerr(prefix):
+    e = [abs(v[x + "_direct"] - v.get(x + "_formula", v.get(x + "_sectors"))) / abs(v.get(x + "_formula", v.get(x + "_sectors")))
+         for k, v in c7.items() if k.startswith(prefix) for x in ("FW", "FQ")]
+    return f"10^{{{int(np.ceil(np.log10(max(e))))}}}"
+R["noise_err_ld"] = max(relerr("loss"), relerr("deph"), key=lambda s: int(s[4:-1]))
+R["noise_err_gauss"] = relerr("gauss")
 # C8: dephasing, base set
 e, a = c8["eqn"], c8["ahm"]
 R["deph_eqn_clean"], R["deph_eqn_deph"] = f"{e['median_ratio_clean']:.2f}", f"{e['median_ratio_deph']:.2f}"

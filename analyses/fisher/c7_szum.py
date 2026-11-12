@@ -54,7 +54,10 @@ for nb in (0.0, 1.0):
         FWd = np.mean([np.sum(np.convolve(g.marginal(D, t), ker, mode="same") ** 2 / p0n()) * g.dx for t in g.th])
         q = g.qfun(D); k2 = np.exp(-(g.X ** 2 + g.P ** 2) / (2 * s2)); k2 /= k2.sum()
         qn = fftconvolve(q, k2, mode="same"); Q0n = np.exp(-(g.X ** 2 + g.P ** 2) / (2 * (vn + 0.5))) / (2 * np.pi * (vn + 0.5))
-        FQd = np.sum(qn ** 2 / Q0n) * g.dq ** 2
+        # the tails of Q0n underflow far outside the state; there qn is convolution round-off, and qn^2/Q0n would
+        # blow up (2.9e13 at nbar=0, s2=0.25), so the integral runs over the grid points where Q0n is representable
+        m = Q0n > 1e-20 * Q0n.max()
+        FQd = np.sum(qn[m] ** 2 / Q0n[m]) * g.dq ** 2
         FWf, FQf = formula_from_b(b, v, vn, mu, 120)
         out[f"gauss_nb{nb}_s2{s2}"] = dict(FW_direct=FWd, FW_formula=FWf, FQ_direct=FQd, FQ_formula=FQf)
         print("gauss", nb, s2, out[f"gauss_nb{nb}_s2{s2}"], flush=True)

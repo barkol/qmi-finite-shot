@@ -1,0 +1,32 @@
+"""Data layer for fig_dephasing_sectors: per state i (both sets), its clean nearest-Q partner j,
+f_high = share of ||rho_j - rho_i||^2 in Fock coherences |m-n|>=2, dlog = ln[(xi_W/xi_Q)_deph / (xi_W/xi_Q)_clean] for the same pair.
+Compute-if-missing -> paper/figures/data/fig_dephasing_sectors.npz. Rebuild the cache: delete it and run this file."""
+import sys, os, numpy as np, importlib.util
+from pathlib import Path
+from scipy.stats import spearmanr
+ROOT = Path(__file__).resolve().parents[3]                      # repository root
+CACHE = str(ROOT / "paper" / "figures" / "data" / "fig_dephasing_sectors.npz")
+OUT = str(ROOT / "analyses" / "chernoff" / "out")                # M24_*.npz from chernoff.py --M 24
+def build():
+    sys.path.insert(0, str(ROOT))
+    spec = importlib.util.spec_from_file_location("ch", str(ROOT / "analyses" / "chernoff" / "chernoff.py"))
+    ch = importlib.util.module_from_spec(spec); spec.loader.exec_module(ch)
+    data = {}
+    for fam in ("eqn", "ahm"):
+        c0 = np.load(f"{OUT}/M24_{fam}_clean0.npz", allow_pickle=True); c1 = np.load(f"{OUT}/M24_{fam}_dephase20.npz", allow_pickle=True)
+        lab = c0["lab"]; names = c0["names"]
+        M = c0["CQ"].copy(); M[lab[:, None] == lab[None, :]] = np.inf; j = M.argmin(1); i = np.arange(len(lab))
+        dlog = np.log((c1["CW"][i, j] / c1["CQ"][i, j]) / (c0["CW"][i, j] / c0["CQ"][i, j]))
+        rhos, lab2, _, _ = ch.samples(fam, 24, 2210); assert (lab2 == lab).all()
+        R = [ch.dm(r) for r in rhos]; d = R[0].shape[0]; mm = np.abs(np.subtract.outer(np.arange(d), np.arange(d)))
+        fh = np.array([(np.abs(R[b] - R[a]) ** 2)[mm >= 2].sum() / (np.abs(R[b] - R[a]) ** 2).sum() for a, b in zip(i, j)])
+        rs = spearmanr(fh, dlog)
+        data.update({f"{fam}_fh": fh, f"{fam}_dlog": dlog, f"{fam}_lab": lab, f"{fam}_names": names,
+                     f"{fam}_rho": rs.correlation, f"{fam}_p": rs.pvalue})
+    os.makedirs(os.path.dirname(CACHE), exist_ok=True); np.savez(CACHE, **data)
+def load():
+    if not os.path.exists(CACHE): build()
+    return np.load(CACHE, allow_pickle=True)
+if __name__ == "__main__":
+    z = load(); print({k: z[k].shape for k in z.files})
+    for f in ("eqn", "ahm"): print(f, float(z[f + "_rho"]), float(z[f + "_p"]), z[f + "_dlog"].min(), z[f + "_dlog"].max())
