@@ -36,6 +36,7 @@ summaries `scores_summary.json`.
 | `kawasaki/` | photon-subtracted squeezed states of Kawasaki et al. (2024); record-level test of the Konno records | `numbers_kawasaki.tex` |
 | `kawasaki_epr/` | traces of the EPR source of Kawasaki et al. (2025): quadratures, records, classification | (text only) |
 | `shap/` | GradientShap attribution maps of the Q, W and sinogram networks | (text only) |
+| `fisher/` | numerical checks of the Fisher-information results (mode weights, Theorems 1 and 2, noise, sharpness), see `fisher/README.md` | `numbers_fisher.tex` |
 
 Two further directories hold reports, result files and their own code: `lr_observer/` (likelihood-ratio observer of the base set; `lr_observer.py`, `lr_results.json`, `REPORT.md`) and `fbp2/` (sensitivity check with a better FBP: `code/` with the record, pair and analysis modules and the run scripts (they use the data and networks of the base set, see `MANIFEST_LARGE_FILES.md`), `results_full.json`, `fbp_err.json`, `PILOT_REPORT.md`; `paper/scripts/fbp2_table.py` formats the results).
 

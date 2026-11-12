@@ -19,7 +19,7 @@ command -v "$PY" >/dev/null || { echo "BLAD: no python at $PY (set PY=...)"; exi
 
 RES=paper/results
 REF="$(mktemp -d)"; trap 'rm -rf "$REF"' EXIT
-FILES="numbers.tex numbers_ahm.tex numbers_konno.tex numbers_chernoff.tex numbers_maxlik.tex numbers_arch2.tex numbers_kawasaki.tex numbers_shap.tex numbers_holm.tex numbers_kscan.tex numbers_robust.tex numbers_epr.tex numbers_fbp2.tex ci.json ci_ahm.json kscan.json robustness.json ci_coverage.json"
+FILES="numbers.tex numbers_ahm.tex numbers_konno.tex numbers_chernoff.tex numbers_maxlik.tex numbers_arch2.tex numbers_kawasaki.tex numbers_shap.tex numbers_holm.tex numbers_kscan.tex numbers_robust.tex numbers_epr.tex numbers_fbp2.tex numbers_fisher.tex ci.json ci_ahm.json kscan.json robustness.json ci_coverage.json"
 for f in $FILES; do
   [ -f "$RES/$f" ] || { echo "BLAD: committed $RES/$f missing"; exit 2; }
   cp "$RES/$f" "$REF/$f"
@@ -29,7 +29,8 @@ echo "== 1/2 numbers from the result files"
 ( cd paper
   "$PY" scripts/make_numbers.py                                       > "$REF/log_base.txt"
   RES=results_ahm PFX=ahm_ OUTDIR=results "$PY" scripts/make_numbers.py > "$REF/log_ahm.txt"
-  RES=results "$PY" scripts/make_numbers_konno.py                     > "$REF/log_konno.txt" )
+  RES=results "$PY" scripts/make_numbers_konno.py                     > "$REF/log_konno.txt"
+  "$PY" scripts/numbers_fisher.py                                     > "$REF/log_fisher.txt" )
 export QMI_PAPER="$ROOT/paper"
 "$PY" analyses/chernoff/numbers_chernoff.py   > "$REF/log_chernoff.txt"
 "$PY" analyses/maxlik/numbers_maxlik.py       > "$REF/log_maxlik.txt"
