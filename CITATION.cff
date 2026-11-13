@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or these results, please cite the paper."
-title: "qmi-finite-shot: code, scripts and result files for the mode-resolved Fisher-information efficiency of homodyne and heterodyne detection"
+title: "qmi-finite-shot: code, scripts and result files for the Fisher-information efficiency of homodyne and heterodyne detection near Gaussian states"
 type: software
 authors:
   - family-names: Grzywa
