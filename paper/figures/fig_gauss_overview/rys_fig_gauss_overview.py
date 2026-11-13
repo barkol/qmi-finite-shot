@@ -30,7 +30,7 @@ th = np.deg2rad(35); L = 3.0
 ax.plot([-L * np.cos(th), L * np.cos(th)], [-L * np.sin(th), L * np.sin(th)], [zf, zf], color=HOM, lw=1.0, ls=(0, (4, 2)), zorder=1)  # homodyne quadrature
 ax.add_artist(fs.Arrow3D([0.82 * L * np.cos(th), L * np.cos(th)], [0.82 * L * np.sin(th), L * np.sin(th)], [zf, zf], mutation_scale=6, arrowstyle="-|>", color=HOM, lw=0.8, zorder=2))
 ax.text(0.2, -2.25, zf, r"$V$", color=fs.INK, fontsize=8, ha="center"); ax.text(-1.25, -0.2, zf, r"$\Sigma$", color=HET, fontsize=8, ha="center")
-ax.text(1.9, 2.6, zf, r"$\mathbf{u}$", color=HOM, fontsize=8, zorder=20)
+ax.text(-0.2, 1.3, zf, r"$\mathbf{u}$", color=HOM, fontsize=8, zorder=20)
 ax.text(3.4, -1.0, z1 + 0.2, r"$W_0$", fontsize=8, zorder=20); ax.text(3.4, -1.0, z2 + 0.2, r"$W_\Delta$", fontsize=8, zorder=20)
 ax.set_xlim(-3.6, 3.6); ax.set_ylim(-3.6, 3.6); ax.set_zlim(0, 3.2); ax.set_box_aspect((1, 1, 1.25)); ax.view_init(elev=20, azim=-58); ax.set_axis_off()
 ax.set_xticks([]); ax.set_yticks([]); ax.set_zticks([]); clean(ax)
