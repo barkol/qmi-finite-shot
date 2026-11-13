@@ -6,7 +6,7 @@ for nb in (0.5, 1.0, 3.0):
     q = nb / (nb + 1); v = nb + 0.5
     for l in (1, 2, 3):
         rows = []
-        for d in (12, 20, 30):
+        for d in (12, 20, 30, 50, 70):
             p = pth(nb, d); a = np.diag(np.sqrt(np.arange(1, d)), 1); ad = a.T
             G = np.linalg.matrix_power(ad, l) @ np.diag(p); D = (G + G.T).astype(complex)
             g = Grid(v, d, nth=4 * l + 8, nq=301)
