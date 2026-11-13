@@ -34,7 +34,7 @@ for nb in (0.3, 1.0, 2.5):
             vals = np.array(vals); w2 = max(w2, np.abs(vals / vals[0] - 1).max())
             # (3) pure Hermite order of W_Delta/W0 (small cutoff where hermite_coeffs is exact)
             if nb <= 1.0 and l + 2 * k <= 8:
-                d = 40; nn2 = np.arange(d - l); pi2 = (1 - q) * q ** np.arange(d)
+                d = 50; nn2 = np.arange(d - l); pi2 = (1 - q) * q ** np.arange(d)
                 cc = pi2[:d - l] * np.exp(0.5 * (gammaln(nn2 + l + 1) - gammaln(nn2 + 1))) * np.array([M(k, x, l + 1, q) for x in nn2])
                 G = np.zeros((d, d), complex)
                 for i, ci in enumerate(cc): G[i + l, i] = ci

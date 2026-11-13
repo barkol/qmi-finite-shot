@@ -1,6 +1,6 @@
 # Fisher information of homodyne and heterodyne detection: numerical checks
 
-Checks of the Fisher-information results of the revised paper (Sec. II and Appendix A). The Fisher information of
+Checks of the Fisher-information results of the revised paper (Sec. II, Sec. III A and Appendix A). The Fisher information of
 both detections is computed directly from the outcome densities, `int delta^2/p` on a grid (`fisherlib.py`),
 without the formulas being checked. Run every script from this directory; results go to `out/*.json`, and the
 long scripts are resumable (finished cases are skipped).
@@ -13,12 +13,12 @@ long scripts are resumable (finished cases are skipped).
 | `c5_dowod_H1.py` | steps of the proof of Theorem 1 (Meixner-Laguerre identity, sector l = 0 and l != 0) | `out/c5.json` |
 | `c6_het_sektory.py` | heterodyne Fisher information per phase sector as a generalized eigenproblem (Theorem 2) | `out/c6.json` |
 | `c7_szum.py` | loss, dephasing and Gaussian noise act diagonally on the Hermite-Gauss modes (the heterodyne integral skips grid points where the reference `Q` underflows) | `out/c7.json` |
-| `c8_globalne.py` | effect of dephasing on the Chernoff exponents (Sec. II D, global part) | `out/c8.json` |
+| `c8_globalne.py` | effect of dephasing on the Chernoff exponents (Sec. III A, from local to global) | `out/c8.json` |
 | `c9_ostrosc.py` | sharpness: displacements attain both bounds, and `(a^dag)^l rho0 + h.c.` the heterodyne sector bound | `out/c9.json` |
 | `c10_sektory.py`, `c10_diag.py`, `c10_meixner.py` | Theorem 1 (spectrum of the modes): sector suprema by a generalized eigenproblem, commutation of the forms, simultaneous diagonalization by the Meixner directions | `out/c10.json`, `out/c10_meixner.json` |
 | `c11_dowod_widmo.py`, `c11b.py` | each identity of the proof of Theorem 1 (Meixner-Laguerre conditional expectation, single Laguerre-Gauss mode, pure Hermite order, bound 1/2) | `out/c11.json` |
 | `c12_sld_mody.py` | F_SLD diagonal in the Hermite-Gauss modes, Eq. (sldmodes), against the Fock-basis formula | `out/c12.json` |
-| `c13_zanik.py` | thermalization toward rho0: the modes decay as exp(-(k+l/2)At) and the Fisher information of every detection decays mode by mode, without cross terms (Sec. II C) | `out/c13.json` |
+| `c13_zanik.py` | thermalization toward rho0: the modes decay as exp(-(k+l/2)At) and the Fisher information of every detection decays mode by mode, without cross terms (Sec. II D) | `out/c13.json` |
 | `fisherlib.py`, `c4lib.py` | shared code (no side effects on import) | |
 
 Dependencies: numpy, scipy, mpmath. `c8_globalne.py` also needs qsdl and the pair matrices

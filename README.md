@@ -1,7 +1,7 @@
 # qmi-finite-shot
 
-Companion code and result files for *Quantum and classical Fisher information of homodyne and heterodyne detection in
-Hermite-Gauss modes* (F. Grzywa, S. Dolata and K. Bartkiewicz; arXiv:2610.38671 v1 has the earlier title *Homodyne versus
+Companion code and result files for *Mode-resolved Fisher-information efficiency of homodyne and heterodyne detection near
+thermal states* (F. Grzywa, S. Dolata and K. Bartkiewicz; arXiv:2610.38671 v1 has the earlier title *Homodyne versus
 heterodyne detection for classifying families of optical quantum states from finite records of detection events*).
 Authors of the code and of the paper: see `AUTHORS` and `CITATION.cff`.
 
@@ -77,7 +77,7 @@ from the caches (`--replot` plots only). The style template `paper/figures/figst
 journal column widths) is part of the repository under the MIT license. All text in the figures is at least 2 mm high
 in print (2 mm rule; `big2mm` and `TEX_2MM` in `figlook.py`). `fig_states.py` and `fig_detection_3d.py` compute states with qsdl and need it on `PYTHONPATH`;
 the cache of `fig_states` (8.9 MB) is not stored. `fig_rule_flow.py` writes `fig_rule_flow.tex` from `ci.json` and
-`ci_ahm.json`. The dephasing figure of Sec. IV is made by `paper/figures/fig_dephasing_sectors/`: `dane_fig_dephasing_sectors.py`
+`ci_ahm.json`. The dephasing figure of Sec. III A is made by `paper/figures/fig_dephasing_sectors/`: `dane_fig_dephasing_sectors.py`
 builds `paper/figures/data/fig_dephasing_sectors.npz` from `analyses/chernoff/out/M24_*.npz` (needs qsdl), and
 `rys_fig_dephasing_sectors.py` plots it with GLE 4.3 (glx.sourceforge.io, with LaTeX).
 Fig. 1 (bounds and mode criterion) is made the same way by `paper/figures/fig_fisher_overview/` from
