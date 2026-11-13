@@ -25,6 +25,7 @@ def build():
         data.update({f"{fam}_fh": fh, f"{fam}_dlog": dlog, f"{fam}_lab": lab, f"{fam}_names": names,
                      f"{fam}_rho": rs.correlation, f"{fam}_p": rs.pvalue})
     os.makedirs(os.path.dirname(CACHE), exist_ok=True); np.savez(CACHE, **data)
+SHIFT_MAX = 0.15   # a pair is in the range of the theory if dephasing changes its mean heterodyne distribution by at most this total-variation distance
 def add_prediction():
     """Merge the prediction of the theory (analyses/fisher/out/c18.json, made by c18_dephasing_prediction.py) into the cache."""
     import json
@@ -32,10 +33,15 @@ def add_prediction():
     for fam in ("eqn", "ahm"):
         assert np.abs(np.array(c[fam]["obs"]) - z[f"{fam}_dlog"]).max() < 1e-12            # same pairs, same order
         z[f"{fam}_pred"] = np.array(c[fam]["pred"]); z[f"{fam}_rho_pred"] = c[fam]["spearman"]
+    c19 = json.load(open(str(ROOT / "analyses" / "fisher" / "out" / "c19.json")))       # range of validity of the prediction (c19_dephasing_reference.py)
+    for fam in ("eqn", "ahm"):
+        sh = np.array([x["shiftQ"] for x in c19["pairs"][fam]]); z[f"{fam}_shift"] = sh; z[f"{fam}_inrange"] = sh <= SHIFT_MAX
+        m = z[f"{fam}_inrange"]; z[f"{fam}_rho_pred_in"] = spearmanr(z[f"{fam}_pred"][m], z[f"{fam}_dlog"][m]).correlation
+    z["shift_max"] = SHIFT_MAX
     np.savez(CACHE, **z)
 def load():
     if not os.path.exists(CACHE): build()
-    if "eqn_pred" not in np.load(CACHE, allow_pickle=True).files: add_prediction()
+    if "eqn_inrange" not in np.load(CACHE, allow_pickle=True).files: add_prediction()
     return np.load(CACHE, allow_pickle=True)
 if __name__ == "__main__":
     z = load(); print({k: z[k].shape for k in z.files})

@@ -38,20 +38,23 @@ def panel_pred(fam, x0, letter, title):
          f"  xaxis min {lo} max {hi} dticks 0.4 hei .3", "  yaxis min -0.8 max 1.6 dticks 0.4 hei .3",
          '  xtitle "\\tex{predicted $\\Delta\\ln(F_W/F_Q)$}" hei .32 dist .1',
          '  ytitle "\\tex{$\\Delta\\ln(\\xi_W/\\xi_Q)$}" hei .32 dist .1']
-    k = 1
-    for nm in order:
-        if nm not in names: continue
-        m = lab == names.index(nm)
-        np.savetxt(f"{here}/gle/{fam}_{nm}_pred.dat", np.c_[pr[m], dl[m]], fmt="%.5f")
-        lbl, mk, (r, g, b) = STY[nm]
-        s += [f'  data "gle/{fam}_{nm}_pred.dat" d{k}=c1,c2', f"  d{k} marker {mk} msize .21 color rgb255({r},{g},{b})"]
-        k += 1
+    k = 1; inr = z[f"{fam}_inrange"]
+    for sel, tag in ((~inr, "out"), (inr, "in")):                      # pairs outside the range of the theory first, in grey
+        for nm in order:
+            if nm not in names: continue
+            m = (lab == names.index(nm)) & sel
+            if not m.any(): continue
+            np.savetxt(f"{here}/gle/{fam}_{nm}_pred_{tag}.dat", np.c_[pr[m], dl[m]].reshape(-1, 2), fmt="%.5f")
+            lbl, mk, (r, g, b) = STY[nm]
+            col = f"rgb255({r},{g},{b})" if tag == "in" else "rgb255(185,185,185)"
+            s += [f'  data "gle/{fam}_{nm}_pred_{tag}.dat" d{k}=c1,c2', f"  d{k} marker {mk} msize .21 color {col}"]
+            k += 1
     gx = lambda v: x0 + 7.2 * (v - lo) / (hi - lo); gy = lambda v: 1.2 + 5.4 * (v + 0.8) / 2.4
     s += ["end graph", "set lstyle 2", "set lwidth .02", "set color gray50",
           f"amove {gx(-0.8)} {gy(-0.8)}", f"aline {gx(1.6)} {gy(1.6)}", "set lstyle 1", "set lwidth .022", "set color black",
           "set just bl", "set hei .3", f"amove {x0} {1.2 + 5.4 + 0.15}", f'write "({letter}) {title}"',
-          "set just br", f"amove {x0 + 7.2 - 0.2} {1.2 + 0.25}",
-          f'write "\\tex{{$\\rho_S={float(z[fam + "_rho_pred"]):.2f}$}}"']
+          "set just tl", f"amove {x0 + 0.2} {1.2 + 5.4 - 0.2}",
+          f'write "\\tex{{$\\rho_S={float(z[fam + "_rho_pred_in"]):.2f}$ (colored), ${float(z[fam + "_rho_pred"]):.2f}$ (all)}}"']
     return s
 L = ["size 18 15.4", "set font texcmr", "set hei .3", "set lwidth .022"]
 top = panel("eqn", 1.4, "a", "base set", 8.2) + panel("ahm", 10.4, "b", "set of Ahmed et al.", 8.2)
