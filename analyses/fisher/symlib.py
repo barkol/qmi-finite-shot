@@ -26,7 +26,7 @@ def dgamma(L, n):
 def eff(M, v, n):
     w = np.linalg.eigvals(M @ Sinv(v, n)); assert np.abs(w.imag).max() < 1e-8; return np.sort(w.real)
 if __name__ == "__main__":
-    # thermal reference: Theorem 1 of the paper
+    # thermal reference: Corollary 2 of the paper
     for nb in (0.5, 3.0):
         v = nb + 0.5; q = nb / (nb + 1); kap = 2 * nb / (2 * nb + 1); err = 0
         for n in range(1, 9):
@@ -35,4 +35,4 @@ if __name__ == "__main__":
             hom = np.sort([(comb(n, int(kk)) * (kap / 2) ** kk * (1 - kap / 2) ** (n - kk) + comb(n, int(kk + ll)) * (kap / 2) ** (kk + ll) * (1 - kap / 2) ** (n - kk - ll)) / 2 for kk, ll in zip(k, l)])
             Mhom = sum(sym(proj(p), n) for p in np.arange(256) * np.pi / 256) / 256
             err = max(err, np.abs(eff(sym(lam(v, 0.5 * np.eye(2)), n), v, n) - het).max(), np.abs(eff(Mhom, v, n) - hom).max())
-        print("thermal nb", nb, "max deviation from Theorem 1 (n <= 8):", err)
+        print("thermal nb", nb, "max deviation from Corollary 2 (n <= 8):", err)

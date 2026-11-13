@@ -1,4 +1,4 @@
-"""C14 (Sec. II D, arbitrary states against a thermal state): the quadratic forms of the paper are chi^2 divergences from the
+"""C14 (Sec. II G, arbitrary states against a thermal state): the quadratic forms of the paper are chi^2 divergences from the
 thermal state rho0 for ANY state rho, not only for a small change.
 (A) constants of the elementary inequalities for sqrt(1+x), x >= -1, used in the Bhattacharyya sandwich;
 (B) displacement of rho0 by alpha of any size: heterodyne xi_Q = |a|^2/(4(nb+1)); homodyne at a random recorded phase

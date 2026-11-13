@@ -1,5 +1,5 @@
 """Data layer for fig_mode_efficiency (Fig. 2): efficiencies of the Hermite-Gauss mode (n, l) near a thermal state,
-Theorem 1 of the paper (closed form, no numerics):
+Corollary 2 of the paper (closed form, no numerics):
   heterodyne  F_Q/F_SLD = [P(N0 >= k) + P(N0 >= k+|l|)]/2 = (1 + q^|l|) q^k / 2,   N0 thermal, q = nbar/(nbar+1)
   homodyne    F_W/F_SLD = [P(X = k) + P(X = k+|l|)]/2,  X ~ Bin(n, kappa/2), kappa/2 = nbar/(2 nbar + 1),
 k = (n-|l|)/2, for edge modes (|l| = n), |l| = n - 2 and central modes (|l| <= 1).

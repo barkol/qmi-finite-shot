@@ -1,4 +1,4 @@
-"""Step-by-step checks of the proof of the sector spectrum (Theorem 1).
+"""Step-by-step checks of the proof of the spectrum of the modes near a thermal state (Corollary 2 of the paper).
 (1) E[M_k(n; l+1, q) | s] = k!/(l+1)_k L_k^(l)(s/nbar),  n|s ~ Poisson(s).
 (2) <beta|Gamma_{l,k}|beta>/Q0(beta) = C * conj(beta)^l L_k^(l)(|beta|^2/(nbar+1))  (single LG mode of order l+2k).
 (3) W_Delta/W0 of Delta_{l,k} has Hermite coefficients only of order n = l+2k (fisherlib.hermite_coeffs, independent).

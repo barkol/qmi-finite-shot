@@ -59,7 +59,7 @@ c15 = J("c15.json")
 for r, tag in (("0.2", "02"), ("0.5", "05")):
     R[f"sqref_Q_r{tag}"], R[f"sqref_W_r{tag}"] = f"{c15[r]['maxeffQ']:.2f}", f"{c15[r]['maxeffW']:.2f}"
     R[f"sqref_off_r{tag}"] = f"{max(c15[r]['offQ'], c15[r]['offW']):.2f}"
-# C16, C17: order-n blocks against direct integrals near a squeezed thermal state (r = 0.3); bounds of Theorems 2, 3 and Corollary 2
+# C16, C17: order-n blocks against direct integrals near a squeezed thermal state (r = 0.3); bounds of Theorems 2, 3 and Corollary 1
 c16, c17 = J("c16.json"), J("c17.json")
 R["block_err"] = p10(max(c16["T1_het_r0.3"][1], c16["T2_hom_r0.3"][1], c16["T3_hom_weighted"][1]))
 R["bound_exc"] = p10(max(c17[k] for k in ("A_max_excess", "B_max_excess", "C_max_excess", "E_hom_excess")))

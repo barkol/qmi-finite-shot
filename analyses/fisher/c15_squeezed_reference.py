@@ -1,4 +1,4 @@
-"""C15 (Sec. II D, scope): squeezed thermal reference state rho0' = S(r) rho_th S(r)^dag, nbar = 0.5.
+"""C15 (Sec. II F, squeezed thermal reference by direct integrals; not quoted in the paper): squeezed thermal reference state rho0' = S(r) rho_th S(r)^dag, nbar = 0.5.
 Any zero-mean one-mode Gaussian state has this form, so this covers squeezed vacuum with thermal noise as well.
 F_SLD is unitarily covariant and stays diagonal in the transformed modes S Upsilon S^dag with the same values.
 Heterodyne detection and homodyne detection at a uniformly random phase are not covariant under squeezing: their Fisher

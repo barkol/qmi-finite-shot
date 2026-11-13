@@ -1,4 +1,4 @@
-"""Commutation test: in sector l the homodyne form is diagonal in the heterodyne eigenbasis (Theorem 1).
+"""Commutation test: in sector l the homodyne form is diagonal in the heterodyne eigenbasis (Corollary 2 of the paper).
 Truncated Fock basis (N = 40): exact only for small nbar; at nbar = 2 and 5 the residual commutator is a truncation
 effect that decreases with N (nbar = 5, l = 3: 0.139, 0.068, 0.030 for N = 40, 80, 140). See c10_meixner.py for large nbar."""
 import numpy as np, mpmath as mp

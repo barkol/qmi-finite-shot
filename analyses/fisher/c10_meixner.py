@@ -14,7 +14,7 @@ for nb in (0.1, 0.5, 1.0, 2.0, 5.0):
     N = min(N, 260)
     for l in range(0, 6):
         IW, MQ, S = mats(nb, l, N) if l > 0 else (None, None, None)
-        if l == 0: continue       # l = 0 is Lemma 1 of the paper (checked by c5)
+        if l == 0: continue       # l = 0 is checked by c5
         n = np.arange(N); pi = (1 - q) * q ** n
         from scipy.special import gammaln
         base = pi[:N] * np.exp(0.5 * (gammaln(n + l + 1) - gammaln(n + 1)))
