@@ -1,6 +1,6 @@
 """Data layer for fig_fisher_overview (Fig. 1): efficiencies F/F_SLD of homodyne (random phase) and heterodyne
 detection near a thermal state, and the mode criterion of Eq. (criterion).
-(a) bounds of Theorems 1 and 2 and the sharp homodyne supremum of sector l = 3 (Theorem 3) versus nbar (closed form), medians over random directions (analyses/fisher/out/c4.json,
+(a) bounds of Theorems 2 and 3 and the sharp homodyne supremum of sector l = 3 (Eq. (sectorsup), from Theorem 1) versus nbar (closed form), medians over random directions (analyses/fisher/out/c4.json,
     Fock support d = 4, 6, 8) and the edge directions (a^dag)^l rho0 + h.c., l = 1, 3 (c9.json, largest support).
 (b) occupation nbar* above which heterodyne detection carries more information on the mode (n, |l|):
     binom(n, (n-|l|)/2) = ((2 nbar + 1)/(nbar + 1))^n  ->  nbar* = (c - 1)/(2 - c),  c = binom^(1/n).

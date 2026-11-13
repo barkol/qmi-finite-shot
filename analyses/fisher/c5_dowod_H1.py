@@ -1,4 +1,4 @@
-"""Numerical checks of the proof of H1 (homodyne): (i) int W_{|n><n|} L_k(u) dxdp = kappa^k M_k(n),
+"""Numerical checks of the proof of Theorem 2 (homodyne): (i) int W_{|n><n|} L_k(u) dxdp = kappa^k M_k(n),
 (ii) l=0 sector: F_W = sum_k w_k rho^k mu_k^2, (iii) l!=0 sector identity 4 int|g|^2/p0 = F_x(G_R)+F_x(G_I) <= F_SLD,
 (iv) sector additivity of F_W."""
 import json, numpy as np

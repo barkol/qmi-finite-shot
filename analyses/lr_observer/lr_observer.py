@@ -10,7 +10,7 @@ multinomial marginals of the discrete Radon transform of W with split_events for
 
 UPPER BOUND on any classifier for KNOWN prototypes. Not a performance claim for unknown states.
 
-  QMI_XMAX=12 PYTHONPATH=~/work/qsdl-qmi python lr_observer.py build|run|agg|all [--smoke] [--workers 12]
+  QMI_XMAX=12 QMI_ROOT=<dir with data_eq/> PYTHONPATH=<repo>:<qsdl> python lr_observer.py build|run|agg|all [--smoke] [--workers 12]
 Checkpoints: cache/proto_<cell>.npz (library), parts/part_<cell>_<family>.npz (predictions); existing files are skipped.
 """
 import os
@@ -23,8 +23,9 @@ import numpy as np
 from scipy.special import logsumexp
 
 HERE = Path(__file__).resolve().parent
-DATA = Path(os.path.expanduser("~/work/qsdl-qmi/data_eq/qmi/test/sweep"))
-RES = Path(os.path.expanduser("~/work/qmi-finite-shot/paper/results"))
+ROOT = HERE.parents[1]
+DATA = Path(os.environ.get("QMI_ROOT", str(ROOT))) / "data_eq" / "qmi" / "test" / "sweep"
+RES = ROOT / "paper" / "results"
 NS = (100, 1000, 10000)
 KS = (36, 12, 6)
 CELLS = {"clean": ("loss", 0), "deph20": ("dephase", 20), "loss50": ("loss", 50), "loss80": ("loss", 80),

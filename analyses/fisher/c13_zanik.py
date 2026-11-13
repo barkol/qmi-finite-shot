@@ -1,4 +1,4 @@
-"""C13 (thermalization, Sec. II C):  decay of the Fisher information under thermal damping toward rho0 (same nbar), generator
+"""C13 (thermalization, Sec. II D):  decay of the Fisher information under thermal damping toward rho0 (same nbar), generator
 L = A[(nbar+1) D[a] + nbar D[a^dag]].  Claims: (i) Phi_t(Upsilon_{l,k}) = exp(-(k+l/2) A t) Upsilon_{l,k};
 (ii) for Delta = sum c_j Upsilon_j,  F_X(Phi_t Delta) = sum c_j^2 exp(-2(k_j+l_j/2) A t) F_X(Upsilon_j) for X = SLD, Q, W
 (no cross terms), so each detection loses information mode by mode and at late times the slowest mode sets F_W/F_Q."""

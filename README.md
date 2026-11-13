@@ -6,8 +6,8 @@ heterodyne detection for classifying families of optical quantum states from fin
 Authors of the code and of the paper: see `AUTHORS` and `CITATION.cff`.
 
 License: MIT (see LICENSE).
-The dependency Askartan/qsdl has no license file at the pinned commit; its terms are
-being settled with its authors, and qsdl is therefore not included in this repository.
+The dependency Askartan/qsdl has no license file at the pinned commit, whereas its current head is under the MIT
+license; qsdl is not included in this repository.
 
 ## Repository layout
 

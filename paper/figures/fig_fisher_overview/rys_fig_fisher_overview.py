@@ -34,7 +34,7 @@ L += [f"amove 0 {H + 0.6}", "begin graph", f"  size {W} {H}", "  scale auto", " 
 gx = lambda x: 1.45 + (W - 1.45 - 0.25) * x / 5      # approximate graph-to-page mapping for labels (checked visually)
 gy = lambda y: H + 0.6 + 0.85 + (H - 0.85 - 0.25) * y
 labs = [(2.3, 0.955, "\\tex{heterodyne, $\\lambda$}", HET), (3.3, 0.655, "\\tex{heterodyne, $l=3$}", HET),
-        (2.15, 0.548, "\\tex{homodyne, $l\\geq1$}", HOM), (2.15, 0.415, "\\tex{homodyne, $l=0$}", HOM), (2.6, 0.232, "\\tex{homodyne, $l=3$}", HOM)]
+        (2.15, 0.548, "\\tex{homodyne, all $l\\geq1$}", HOM), (2.15, 0.415, "\\tex{homodyne, $l=0$}", HOM), (2.6, 0.232, "\\tex{homodyne, $l=3$}", HOM)]
 L += ["set just lc", "set hei .27"]
 for x, y, t, c in labs: L += [f"set color {c}", f"amove {gx(x)} {gy(y)}", f'write "{t}"']
 L += ["set color black",          # marker meaning (filled/open, circles/squares) is given in the caption
