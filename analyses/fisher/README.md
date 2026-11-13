@@ -18,6 +18,7 @@ long scripts are resumable (finished cases are skipped).
 | `c10_sektory.py`, `c10_diag.py`, `c10_meixner.py` | Theorem 1 (spectrum of the modes): sector suprema by a generalized eigenproblem, commutation of the forms, simultaneous diagonalization by the Meixner directions | `out/c10.json`, `out/c10_meixner.json` |
 | `c11_dowod_widmo.py`, `c11b.py` | each identity of the proof of Theorem 1 (Meixner-Laguerre conditional expectation, single Laguerre-Gauss mode, pure Hermite order, bound 1/2) | `out/c11.json` |
 | `c12_sld_mody.py` | F_SLD diagonal in the Hermite-Gauss modes, Eq. (sldmodes), against the Fock-basis formula | `out/c12.json` |
+| `c13_zanik.py` | thermalization toward rho0: the modes decay as exp(-(k+l/2)At) and the Fisher information of every detection decays mode by mode, without cross terms (Sec. II C) | `out/c13.json` |
 | `fisherlib.py`, `c4lib.py` | shared code (no side effects on import) | |
 
 Dependencies: numpy, scipy, mpmath. `c8_globalne.py` also needs qsdl and the pair matrices

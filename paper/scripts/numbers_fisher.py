@@ -3,6 +3,7 @@ import json, os, numpy as np
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "analyses", "fisher", "out")
 J = lambda f: json.load(open(f"{D}/{f}"))
 c2, c4, c7, c8, c9 = J("c2.json"), J("c4.json"), J("c7.json"), J("c8.json"), J("c9.json")
+c13 = J("c13.json")
 c2b = J("c2b_lower.json")
 R = {}
 # C2: local radius at the vacuum = largest eps at which both detections are within 2% of the leading term (c_local_vac)
@@ -32,6 +33,9 @@ def relerr(prefix):
     return f"10^{{{int(np.ceil(np.log10(max(e))))}}}"
 R["noise_err_ld"] = max(relerr("loss"), relerr("deph"), key=lambda s: int(s[4:-1]))
 R["noise_err_gauss"] = relerr("gauss")
+# C13: thermalization toward rho0, largest relative deviation of the Fisher information from the mode-by-mode decay
+R["therm_err"] = f"10^{{{int(np.ceil(np.log10(c13['max_rel_dev'])))}}}"
+R["therm_eig"] = f"10^{{{int(np.ceil(np.log10(c13['max_eigen_rel'])))}}}"
 # C8: dephasing, base set
 e, a = c8["eqn"], c8["ahm"]
 R["deph_eqn_clean"], R["deph_eqn_deph"] = f"{e['median_ratio_clean']:.2f}", f"{e['median_ratio_deph']:.2f}"
