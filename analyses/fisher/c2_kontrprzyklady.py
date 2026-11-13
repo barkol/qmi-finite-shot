@@ -157,6 +157,21 @@ if not done("d_squeezed"):
     out["x_vs_p"] = xp
     res["d_squeezed"] = out; save(); print("d", out, flush=True)
 
+# (d') the same pair in the convention of the paper: homodyne at a uniformly random, recorded phase, i.e. the Chernoff
+# exponent of the joint density of (theta, x):  xi_W = -min_s ln mean_theta exp(logC(theta, s)).  (d) above uses a fixed
+# split of the events over K = 36 phases, which averages the exponents instead.
+if not done("d_squeezed_random"):
+    out = {}; th = (np.arange(720) + 0.5) * np.pi / 720
+    for r in (0.5, 1.0, 2.0, 3.0):
+        a, b = (np.exp(-2 * r) + 1) / 2, (np.exp(2 * r) + 1) / 2
+        xiQ = xi_minimize(lambda s: logC(a, b, s) + logC(b, a, s))
+        def lw(s):
+            v = np.array([logC(sq_var(r, 0, t), sq_var(r, np.pi / 2, t), s) for t in th]); m = v.max()
+            return m + np.log(np.mean(np.exp(v - m)))
+        xiW = xi_minimize(lw)
+        out[str(r)] = dict(xiQ=xiQ, xiW=xiW, ratio=xiW / xiQ, dB=20 * r / np.log(10))
+    res["d_squeezed_random"] = out; save(); print("d'", out, flush=True)
+
 # (e) even vs odd cat: xi_W/xi_Q vs e^{|alpha|^2}
 if not done("e_cats"):
     out = {}

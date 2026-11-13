@@ -15,8 +15,8 @@ ec = c2["e_cats"]
 R["cat_ratio_a1"], R["cat_ratio_a25"] = f"{ec['1.0']['ratio']:.1f}", f"{ec['2.5']['ratio']:.0f}"
 pref = [v["ratio_over_e_a2"] for v in ec.values()]
 R["cat_pref"] = f"{min(pref):.2f}\\mbox{{--}}{max(pref):.2f}"
-xp = c2["d_squeezed"]["x_vs_p"]
-R["sq_ratio_r2"], R["sq_ratio_r16"] = f"{xp['2.0']['ratio_K36']:.2f}", f"{xp['16.0']['ratio_K36']:.2f}"
+xp = c2["d_squeezed_random"]          # random recorded phase, the convention of F_W in the paper
+R["sq_ratio_r1"], R["sq_ratio_r2"], R["sq_ratio_r3"] = (f"{xp[r]['ratio']:.2f}" for r in ("1.0", "2.0", "3.0"))
 # C2b: heterodyne local advantage unbounded: min F_W/F_Q at nbar=1, d=4..10
 R["minWQ_nb1_d10"] = f"{c2b['nb1.0_d10']:.2f}"
 # C4: typical efficiencies (medians over random directions), range over nbar in {0.5,1,2,5} and d in {4,6,8}

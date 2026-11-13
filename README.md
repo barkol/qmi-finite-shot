@@ -1,7 +1,8 @@
 # qmi-finite-shot
 
-Companion code and result files for *Homodyne versus heterodyne detection for classifying families of optical quantum states
-from finite records of detection events* (F. Grzywa, S. Dolata and K. Bartkiewicz).
+Companion code and result files for *Quantum and classical Fisher information of homodyne and heterodyne detection in
+Hermite-Gauss modes* (F. Grzywa, S. Dolata and K. Bartkiewicz; arXiv:2610.38671 v1 has the earlier title *Homodyne versus
+heterodyne detection for classifying families of optical quantum states from finite records of detection events*).
 Authors of the code and of the paper: see `AUTHORS` and `CITATION.cff`.
 
 License: MIT (see LICENSE).

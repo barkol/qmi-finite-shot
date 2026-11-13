@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or these results, please cite the paper."
-title: "qmi-finite-shot: code and results for homodyne versus heterodyne detection for classifying families of optical quantum states from finite records of detection events"
+title: "qmi-finite-shot: code, scripts and result files for the Fisher information of homodyne and heterodyne detection"
 type: software
 authors:
   - family-names: Grzywa
