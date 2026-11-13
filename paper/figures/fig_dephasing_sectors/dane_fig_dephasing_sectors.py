@@ -1,5 +1,6 @@
 """Data layer for fig_dephasing_sectors: per state i (both sets), its clean nearest-Q partner j,
 f_high = share of ||rho_j - rho_i||^2 in Fock coherences |m-n|>=2, dlog = ln[(xi_W/xi_Q)_deph / (xi_W/xi_Q)_clean] for the same pair.
+pred = the same change predicted by the theory of Sec. II (analyses/fisher/c18_dephasing_prediction.py).
 Compute-if-missing -> paper/figures/data/fig_dephasing_sectors.npz. Rebuild the cache: delete it and run this file."""
 import sys, os, numpy as np, importlib.util
 from pathlib import Path
@@ -24,8 +25,17 @@ def build():
         data.update({f"{fam}_fh": fh, f"{fam}_dlog": dlog, f"{fam}_lab": lab, f"{fam}_names": names,
                      f"{fam}_rho": rs.correlation, f"{fam}_p": rs.pvalue})
     os.makedirs(os.path.dirname(CACHE), exist_ok=True); np.savez(CACHE, **data)
+def add_prediction():
+    """Merge the prediction of the theory (analyses/fisher/out/c18.json, made by c18_dephasing_prediction.py) into the cache."""
+    import json
+    c = json.load(open(str(ROOT / "analyses" / "fisher" / "out" / "c18.json"))); z = dict(np.load(CACHE, allow_pickle=True))
+    for fam in ("eqn", "ahm"):
+        assert np.abs(np.array(c[fam]["obs"]) - z[f"{fam}_dlog"]).max() < 1e-12            # same pairs, same order
+        z[f"{fam}_pred"] = np.array(c[fam]["pred"]); z[f"{fam}_rho_pred"] = c[fam]["spearman"]
+    np.savez(CACHE, **z)
 def load():
     if not os.path.exists(CACHE): build()
+    if "eqn_pred" not in np.load(CACHE, allow_pickle=True).files: add_prediction()
     return np.load(CACHE, allow_pickle=True)
 if __name__ == "__main__":
     z = load(); print({k: z[k].shape for k in z.files})
