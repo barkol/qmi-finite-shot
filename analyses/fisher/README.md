@@ -19,6 +19,11 @@ long scripts are resumable (finished cases are skipped).
 | `c11_dowod_widmo.py`, `c11b.py` | each identity of the proof of Theorem 1 (Meixner-Laguerre conditional expectation, single Laguerre-Gauss mode, pure Hermite order, bound 1/2) | `out/c11.json` |
 | `c12_sld_mody.py` | F_SLD diagonal in the Hermite-Gauss modes, Eq. (sldmodes), against the Fock-basis formula | `out/c12.json` |
 | `c13_zanik.py` | thermalization toward rho0: the modes decay as exp(-(k+l/2)At) and the Fisher information of every detection decays mode by mode, without cross terms (Sec. II D) | `out/c13.json` |
+| `c14_chi2_global.py` | the Fisher forms as chi^2 divergences for arbitrary states; closed-form Chernoff exponents of a displaced thermal state; bound on the number of events | `out/c14.json` |
+| `c15_squeezed_reference.py` | squeezed thermal reference state: efficiencies and coupling of the thermal modes (direct integrals) | `out/c15.json` |
+| `symlib.py` | library: order-n blocks of the Fisher forms as symmetric powers, M_n = Sym^n(Lambda), J_n = [Sym^n(G_+) + Sym^n(G_-)]/2 (Theorem 1) | |
+| `c16_blocks_vs_grid.py` | Theorem 1 against direct integrals of the outcome densities near a squeezed thermal state, all directions of orders n <= 4 (r = 0.6 is limited by the Fock truncation) | `out/c16.json` |
+| `c17_bounds.py` | bounds of Theorems 2 and 3 and of the homodyne corollary for random settings and mixtures; K equally spaced phases; squeezed thermal state; counterexample to the mean-Lambda bound | `out/c17.json` |
 | `fisherlib.py`, `c4lib.py` | shared code (no side effects on import) | |
 
 Dependencies: numpy, scipy, mpmath. `c8_globalne.py` also needs qsdl and the pair matrices

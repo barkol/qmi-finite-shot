@@ -1,0 +1,76 @@
+size 8.6 11.1
+set font texcmr
+set hei .3
+set lwidth .02
+amove 0 5.5
+begin graph
+  size 8.6 4.6
+  scale auto
+  nobox
+  xaxis min 0 max 1.5 dticks 0.5 hei .3
+  yaxis min 0.4 max 1 dticks 0.2 hei .3
+  xtitle "\tex{squeezing parameter $|r|$}" hei .3 dist .1
+  ytitle "\tex{largest efficiency}" hei .3 dist .1
+  data "gle/a.dat" d1=c1,c2 d2=c1,c3 d3=c1,c4 d4=c1,c5 d5=c1,c6
+  data "gle/am.dat" d6=c1,c2 d7=c1,c3 d8=c1,c4 d9=c1,c5 d10=c1,c6
+  d2 line lstyle 1 lwidth .018 color rgb255(213,94,0)
+  d3 line lstyle 1 lwidth .018 color rgb255(213,94,0)
+  d4 line lstyle 3 lwidth .018 color rgb255(0,114,178)
+  d5 line lstyle 2 lwidth .018 color rgb255(0,114,178)
+  d7 marker fsquare msize .15 color rgb255(213,94,0)
+  d8 marker ftriangle msize .15 color rgb255(213,94,0)
+  d9 marker wcircle msize .15 color rgb255(0,114,178)
+  d10 marker wtriangle msize .15 color rgb255(0,114,178)
+end graph
+set just bl
+amove 0.1 10.219999999999999
+write "\tex{(a)}"
+amove 0 0.2
+begin graph
+  size 8.6 4.6
+  scale auto
+  nobox
+  xaxis min 0 max 13 dticks 2 hei .3
+  yaxis min 0 max 1 dticks 0.2 hei .3
+  xtitle "\tex{order $n$}" hei .3 dist .1
+  ytitle "\tex{largest efficiency in order $n$}" hei .3 dist .1
+  data "gle/b.dat" d1=c1,c2 d2=c1,c3 d3=c1,c4
+  d1 marker fsquare msize .17 line lstyle 1 lwidth .018 color rgb255(213,94,0)
+  d2 marker wcircle msize .17 line lstyle 3 lwidth .018 color rgb255(0,114,178)
+  d3 marker wtriangle msize .17 line lstyle 2 lwidth .018 color rgb255(0,114,178)
+end graph
+set just bl
+amove 0.1 4.92
+write "\tex{(b) $\bar n=0.5$, $r=0.5$}"
+set color rgb255(213,94,0)
+amove 0.2 10.82
+marker fsquare .5
+set just lc
+set hei .27
+amove 0.45 10.82
+write "\tex{het., $\bar n=0.5$}"
+set color black
+set color rgb255(213,94,0)
+amove 2.55 10.82
+marker ftriangle .5
+set just lc
+set hei .27
+amove 2.8 10.82
+write "\tex{$3$}"
+set color black
+set color rgb255(0,114,178)
+amove 3.55 10.82
+marker wcircle .5
+set just lc
+set hei .27
+amove 3.8 10.82
+write "\tex{hom., uniform phase}"
+set color black
+set color rgb255(0,114,178)
+amove 6.6 10.82
+marker wtriangle .5
+set just lc
+set hei .27
+amove 6.85 10.82
+write "\tex{adapted}"
+set color black
