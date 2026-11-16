@@ -1,0 +1,137 @@
+{
+ "params": {
+  "r": 0.5,
+  "NC": 48,
+  "G": 56,
+  "RNG": 7.0,
+  "KS": 32,
+  "NX": 320,
+  "XR": 11.0,
+  "trunc_weight": 2.4119406412399327e-32,
+  "norm_psi": 1.0000000000000004
+ },
+ "random_orders_1": {
+  "overlap_with_psi": 0.0,
+  "norm2": 3.6104375516636846,
+  "sum_h2": 3.6104375516636855,
+  "het_direct": 0.5859455970313697,
+  "het_pred": 0.5859455970313666,
+  "hom_uniform_direct": 0.5859455970313617,
+  "hom_uniform_pred": 0.5859455970313666,
+  "hom_setting_direct": 0.7302496340341565,
+  "hom_setting_pred": 0.7302496340341628,
+  "seconds": 2.8517422676086426
+ },
+ "random_orders_2": {
+  "overlap_with_psi": 2.1962479267420414e-17,
+  "norm2": 4.665098297123894,
+  "sum_h2": 4.665098297123897,
+  "het_direct": 0.481085924046851,
+  "het_pred": 0.48108592404684847,
+  "hom_uniform_direct": 0.4810859240468444,
+  "hom_uniform_pred": 0.48108592404684847,
+  "hom_setting_direct": 0.5278368170490723,
+  "hom_setting_pred": 0.5278368170490767,
+  "seconds": 2.7976298332214355
+ },
+ "random_orders_3": {
+  "overlap_with_psi": 0.0,
+  "norm2": 4.023967076438181,
+  "sum_h2": 4.0239670764381845,
+  "het_direct": 0.4818967388311778,
+  "het_pred": 0.48189673883117856,
+  "hom_uniform_direct": 0.4818967388311746,
+  "hom_uniform_pred": 0.48189673883117856,
+  "hom_setting_direct": 0.5067432023607933,
+  "hom_setting_pred": 0.5067432023607975,
+  "seconds": 2.6622393131256104
+ },
+ "random_orders_4": {
+  "overlap_with_psi": 4.5789548155046715e-17,
+  "norm2": 10.142816605496574,
+  "sum_h2": 10.142816605496579,
+  "het_direct": 0.4876379340309777,
+  "het_pred": 0.4876379340309943,
+  "hom_uniform_direct": 0.48763793403099015,
+  "hom_uniform_pred": 0.4876379340309943,
+  "hom_setting_direct": 0.7490265347159866,
+  "hom_setting_pred": 0.7490265347159931,
+  "seconds": 2.6735565662384033
+ },
+ "random_orders_123": {
+  "overlap_with_psi": 1.3597583308922065e-16,
+  "norm2": 10.662609837920959,
+  "sum_h2": 10.662609837920964,
+  "het_direct": 0.49836021275889314,
+  "het_pred": 0.49836021275889214,
+  "hom_uniform_direct": 0.49836021275888803,
+  "hom_uniform_pred": 0.49836021275889214,
+  "hom_setting_direct": 0.4124779104269736,
+  "hom_setting_pred": 0.41247791042697707,
+  "seconds": 2.5104188919067383
+ },
+ "squeezing_r": {
+  "F_SLD": 4.000000000000001,
+  "F_SLD_pred": 4.0,
+  "het_direct": 0.6067761335170391,
+  "hom_uniform_direct": 0.6067761335170313,
+  "pred_both": 0.6067761335170363,
+  "seconds": 2.5047056674957275
+ },
+ "phase_one_mode": {
+  "F_SLD": 1.3810978455418155,
+  "F_SLD_pred": 1.3810978455418155,
+  "het_direct": 0.3932238664829659,
+  "hom_uniform_direct": 0.39322386648296054,
+  "pred_both": 0.3932238664829637,
+  "seconds": 2.481980323791504
+ },
+ "kerr_one_mode": {
+  "F_SLD": 7.918064161547782,
+  "F_SLD_pred": 7.918064161547781,
+  "het_direct": 0.41345284412297945,
+  "hom_uniform_direct": 0.4134528441229758,
+  "pred_both": 0.4134528441229792,
+  "seconds": 2.520787239074707
+ },
+ "coherent_admixture_subtracted": {
+  "F_SLD": 3.9999999999999996,
+  "F_SLD_pred": 4.0,
+  "het_direct": 0.5000000000000028,
+  "hom_uniform_direct": 0.49999999999999584,
+  "pred_both": 0.5,
+  "seconds": 2.391180992126465
+ },
+ "coherent_admixture_added": {
+  "F_SLD": 3.999999999999999,
+  "F_SLD_pred": 4.0,
+  "het_direct": 0.5000000000000028,
+  "hom_uniform_direct": 0.49999999999999584,
+  "pred_both": 0.5,
+  "seconds": 2.6600282192230225
+ },
+ "chi2_photon_subtracted": {
+  "F_het_direct": 1.000000000000004,
+  "F_het_pred": 1.0,
+  "F_hom_uniform_direct": 1.6480542736638708,
+  "F_hom_uniform_pred": 1.6480542736638855,
+  "F_SLD": "infinite",
+  "seconds": 1.908503532409668
+ },
+ "chi2_photon_added": {
+  "F_het_direct": 1.000000000000004,
+  "F_het_pred": 1.0,
+  "F_hom_uniform_direct": 1.6480542736638708,
+  "F_hom_uniform_pred": 1.6480542736638855,
+  "F_SLD": "infinite",
+  "seconds": 1.9428246021270752
+ },
+ "loss_one_arm": {
+  "F_het_direct": 0.13577015870381162,
+  "F_het_pred": 0.13577015870381096,
+  "F_hom_uniform_direct": 0.18355388582359172,
+  "F_hom_uniform_pred": 0.18355388582359325,
+  "F_SLD": "infinite",
+  "seconds": 3.407776117324829
+ }
+}

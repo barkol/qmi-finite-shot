@@ -1,0 +1,18 @@
+Authors of the code, the result files and the paper
+
+Franciszek Grzywa
+Sebastian Dolata
+Karol Bartkiewicz (contact author, bark@amu.edu.pl), Institute of Spintronics and Quantum Information,
+Faculty of Physics and Astronomy, Adam Mickiewicz University, 61-614 Poznan, Poland
+
+Contributions (as in the paper)
+F.G., S.D.: software, investigation, data curation, visualization, writing (review and editing).
+K.B.: conceptualization, methodology, formal analysis, theorems and proofs, supervision, funding acquisition,
+writing (original draft, review and editing).
+
+AI assistance: Claude Code (Anthropic; version 2.1.308, with Claude Opus models, Claude Opus 5.5 in the final stage)
+was used to write and run the analysis code and the plotting scripts, to check the numbers in the text against the
+result files, and to draft and edit parts of the text. All theorems were proposed by K.B., and the AI assistant helped
+with their proofs, which the authors verified by reading them line by line and by numerical checks with code
+independent of the formulas. The authors reviewed the code, reran the analyses and checked every number and statement
+(see README.md, "Use of AI tools", and the acknowledgments of the paper).

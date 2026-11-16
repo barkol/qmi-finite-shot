@@ -1,0 +1,177 @@
+size 8.6 4.82
+set font texcmr
+set hei .33
+set lwidth .018
+amove 3.75 0.85
+aline 8.35 0.85
+amove 3.75 0.85
+rline 0 0.09
+set just tc
+amove 3.75 0.75
+write "\tex{$-5$}"
+amove 4.871951219512195 0.85
+rline 0 0.09
+set just tc
+amove 4.871951219512195 0.75
+write "\tex{$0$}"
+amove 5.9939024390243905 0.85
+rline 0 0.09
+set just tc
+amove 5.9939024390243905 0.75
+write "\tex{$5$}"
+amove 7.115853658536585 0.85
+rline 0 0.09
+set just tc
+amove 7.115853658536585 0.75
+write "\tex{$10$}"
+amove 8.237804878048781 0.85
+rline 0 0.09
+set just tc
+amove 8.237804878048781 0.75
+write "\tex{$15$}"
+set just tc
+amove 6.05 0.32999999999999996
+write "\tex{accuracy difference (points)}"
+set lstyle 2
+set color gray50
+amove 4.871951219512195 0.85
+aline 4.871951219512195 4.220000000000001
+set lstyle 1
+set color black
+set just rc
+amove 3.6 3.91
+write "\tex{no noise}"
+set color rgb255(70,102,221)
+set lwidth .03
+amove 4.862975609756098 3.91
+aline 4.870668989547038 3.91
+amove 4.8668222996515675 3.91
+set hei .2
+marker wcircle
+set hei .33
+set lwidth .018
+set color black
+amove 5.9746689895470375 3.91
+set hei .2
+marker ftriangle
+set hei .33
+set just rc
+amove 3.6 3.45
+write "\tex{$20\%$ dephasing}"
+set color rgb255(70,102,221)
+set lwidth .03
+amove 4.644355400696864 3.45
+aline 4.788606271777003 3.45
+amove 4.714878048780488 3.45
+set hei .2
+marker wcircle
+set hei .33
+set lwidth .018
+set color black
+amove 8.032648083623695 3.45
+set hei .2
+marker ftriangle
+set hei .33
+set just rc
+amove 3.6 2.99
+write "\tex{$50\%$ loss}"
+set color rgb255(70,102,221)
+set lwidth .03
+amove 4.602682926829268 2.99
+aline 4.8046341463414635 2.99
+amove 4.703979094076655 2.99
+set hei .2
+marker wcircle
+set hei .33
+set lwidth .018
+set color black
+amove 6.333693379790942 2.99
+set hei .2
+marker ftriangle
+set hei .33
+set just rc
+amove 3.6 2.5300000000000002
+write "\tex{$80\%$ loss}"
+set color rgb255(225,65,9)
+set lwidth .03
+amove 4.810388153310105 2.5300000000000002
+aline 5.10595818815331 2.5300000000000002
+amove 4.955937282229965 2.5300000000000002
+set hei .2
+marker fcircle
+set hei .33
+set lwidth .018
+set color black
+amove 7.0773867595818825 2.5300000000000002
+set hei .2
+marker ftriangle
+set hei .33
+set just rc
+amove 3.6 2.0700000000000003
+write "\tex{$80\%$ loss, $N=10^3$}"
+set color rgb255(70,102,221)
+set lwidth .03
+amove 3.9852891986062717 2.0700000000000003
+aline 4.2090543554006965 2.0700000000000003
+amove 4.099407665505226 2.0700000000000003
+set hei .2
+marker wcircle
+set hei .33
+set lwidth .018
+set color black
+amove 5.6605226480836235 2.0700000000000003
+set hei .2
+marker ftriangle
+set hei .33
+set just rc
+amove 3.6 1.6099999999999999
+write "\tex{Gaussian, $\sigma^2=0.2$}"
+set color rgb255(225,65,9)
+set lwidth .03
+amove 4.9520905923344944 1.6099999999999999
+aline 5.02197212543554 1.6099999999999999
+amove 4.987351916376307 1.6099999999999999
+set hei .2
+marker fcircle
+set hei .33
+set lwidth .018
+set color black
+set just rc
+amove 3.6 1.15
+write "\tex{Gaussian, $\sigma^2=0.5$}"
+set color rgb255(225,65,9)
+set lwidth .03
+amove 5.864381184668989 1.15
+aline 6.014418118466899 1.15
+amove 5.939407665505226 1.15
+set hei .2
+marker fcircle
+set hei .33
+set lwidth .018
+set color black
+set hei .33
+set just bl
+amove 4.991951219512195 4.04
+set color rgb255(225,65,9)
+write "heterodyne better"
+set just br
+amove 4.751951219512195 4.04
+set color rgb255(70,102,221)
+write "homodyne better"
+set color black
+set color black
+amove 3.9743902439024392 4.5200000000000005
+set hei .2
+marker fcircle
+set hei .33
+set just lc
+amove 4.154390243902439 4.5200000000000005
+write "observer"
+set color black
+amove 6.218292682926829 4.5200000000000005
+set hei .2
+marker ftriangle
+set hei .33
+set just lc
+amove 6.3982926829268285 4.5200000000000005
+write "networks"

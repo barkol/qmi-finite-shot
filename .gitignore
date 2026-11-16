@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+# large inputs and outputs of the pipeline, not stored (see MANIFEST_LARGE_FILES.md)
+/data/
+/data_eq/
+/data_eq_ahm/
+/runs_eq/
+/runs_ahm_eq/
+/results_eq/
+/results_ahm_eq/
+runs/
+logs/
+*.pt
+*.h5
+*.npz
+# result files and figure caches are stored
+!paper/results/**/*.npz
+!paper/results_ahm/**/*.npz
+!paper/figures/data/*.npz
+!analyses/chernoff/out/M24_*.npz
+# checkpoints of the likelihood-ratio observer
+analyses/lr_observer/cache/
+analyses/lr_observer/parts/
+# GLE and matplotlib build products of the figure scripts
+.gle/
+paper/figures/fig_*/gle/*
+!paper/figures/fig_squeezed_bounds/gle/*.dat
+paper/figures/fig_*/*.eps
+paper/figures/fig_*/*.png
+paper/figures/fig_dephasing_sectors/*.gle
+paper/figures/fig_mode_efficiency/*.gle

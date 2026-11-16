@@ -1,0 +1,86 @@
+size 8.6 5.75
+set font texcmr
+set hei .34
+set lwidth .02
+amove 0 0.1
+begin graph
+  size 8.6 5.0
+  scale auto
+  nobox
+  xaxis min 0 max 2 dticks 0.5 hei .34
+  yaxis min 0 max 1 dticks 0.25 hei .34
+  xtitle "\tex{squeezing parameter $r$}" hei .34 dist .1
+  ytitle "\tex{efficiency $F/F_{\mathrm{SLD}}$}" hei .34 dist .1
+  data "gle/a.dat" d1=c1,c2 d2=c1,c3 d3=c1,c4 d4=c1,c5 d5=c1,c6 d6=c1,c7 d7=c1,c8 d8=c1,c9
+  data "gle/m.dat" d9=c1,c2 d10=c1,c3
+  d1 line lstyle 1 lwidth .018 color black
+  d5 line lstyle 1 lwidth .018 color black
+  d2 line lstyle 1 lwidth .03 color rgb255(225,65,9)
+  d6 line lstyle 1 lwidth .03 color rgb255(225,65,9)
+  d3 line lstyle 2 lwidth .018 color black
+  d7 line lstyle 2 lwidth .018 color black
+  d4 line lstyle 3 lwidth .018 color black
+  d8 line lstyle 3 lwidth .018 color black
+  d9 marker fcircle msize .22 color rgb255(225,65,9)
+  d10 marker wcircle msize .22 color rgb255(225,65,9)
+end graph
+set color black
+set lstyle 1
+set lwidth .018
+amove 0.9 5.45
+rline 0.6 0
+set lstyle 1
+set color black
+set just lc
+set hei .33
+amove 1.6 5.45
+write "\tex{$n=1$}"
+set color rgb255(225,65,9)
+set lstyle 1
+set lwidth .03
+amove 2.65 5.45
+rline 0.6 0
+set lstyle 1
+set color black
+set just lc
+set hei .33
+amove 3.3499999999999996 5.45
+write "\tex{$n=2$}"
+set color black
+set lstyle 2
+set lwidth .018
+amove 4.4 5.45
+rline 0.6 0
+set lstyle 1
+set color black
+set just lc
+set hei .33
+amove 5.1000000000000005 5.45
+write "\tex{$n=3$}"
+set color black
+set lstyle 3
+set lwidth .018
+amove 6.15 5.45
+rline 0.6 0
+set lstyle 1
+set color black
+set just lc
+set hei .33
+amove 6.8500000000000005 5.45
+write "\tex{$n=4$}"
+set hei .33
+set just lc
+set color rgb255(225,65,9)
+amove 1.75 4.62
+set hei .2
+marker fcircle
+set hei .33
+amove 2.0 4.62
+write "squeezing parameter"
+amove 1.75 1.12
+set hei .2
+marker wcircle
+set hei .33
+amove 2.0 1.12
+write "phase shift of one arm"
+set color black
